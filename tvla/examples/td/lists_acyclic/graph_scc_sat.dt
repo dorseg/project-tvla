@@ -1,0 +1,39 @@
+digraph structs {
+node [shape=none]
+edge [arrowhead=vee]
+"47" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5"><TR><TD>L1_6_N47 </TD><TD PORT="n3" BGCOLOR="#C9FF00">n3</TD><TD PORT="n4" BGCOLOR="#C9FF00">n4</TD><TD PORT="n2" BGCOLOR="#C9FF00">n2</TD><TD PORT="n1">n1</TD><TD PORT="n0">n0</TD></TR></TABLE>>];
+"44" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5"><TR><TD>L1_5_N44 </TD><TD PORT="n4" BGCOLOR="#C9FF00">n4</TD><TD PORT="n2" BGCOLOR="#C9FF00">n2</TD><TD PORT="n1">n1</TD><TD PORT="n0">n0</TD></TR></TABLE>>];
+"42" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5"><TR><TD>L1_4_N42 </TD><TD PORT="n4" BGCOLOR="#C9FF00">n4</TD><TD PORT="n2" BGCOLOR="#C9FF00">n2</TD><TD PORT="n1">n1</TD><TD PORT="n0">n0</TD></TR></TABLE>>];
+"56" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5"><TR><TD>L1_3_N56 </TD><TD PORT="n3" BGCOLOR="#C9FF00">n3</TD><TD PORT="n4" BGCOLOR="#C9FF00">n4</TD><TD PORT="n2" BGCOLOR="#C9FF00">n2</TD><TD PORT="n1">n1</TD><TD PORT="n0">n0</TD></TR></TABLE>>];
+"53" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5"><TR><TD>L1_2_N53 </TD><TD PORT="n3" BGCOLOR="#C9FF00">n3</TD><TD PORT="n4" BGCOLOR="#C9FF00">n4</TD><TD PORT="n2" BGCOLOR="#C9FF00">n2</TD><TD PORT="n1">n1</TD><TD PORT="n0">n0</TD></TR></TABLE>>];
+"50" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5"><TR><TD>L1_7_N50 </TD><TD PORT="n3" BGCOLOR="#C9FF00">n3</TD><TD PORT="n4" BGCOLOR="#C9FF00">n4</TD><TD PORT="n2" BGCOLOR="#C9FF00">n2</TD><TD PORT="n1">n1</TD><TD PORT="n0">n0</TD></TR></TABLE>>];
+47:n0 -> 50:n0 [color="#C8C142"];
+47:n1 -> 50:n1 [color="#00FF00"];
+47:n2 -> 50:n2 [color="#0000FF"];
+47:n3 -> 50:n3 [color="#FFFF00"];
+47:n4 -> 50:n4 [color="#FF00FF"];
+44:n0 -> 47:n0 [color="#C8C142"];
+44:n1 -> 47:n1 [color="#00FF00"];
+44:n1 -> 47:n3 [color="#0000FF"];
+44:n2 -> 47:n2 [color="#FFFF00"];
+44:n4 -> 47:n4 [color="#FF00FF"];
+42:n0 -> 44:n0 [color="#C8C142"];
+42:n1 -> 44:n1 [color="#00FF00"];
+42:n2 -> 44:n2 [color="#0000FF"];
+42:n4 -> 44:n4 [color="#FFFF00"];
+56:n0 -> 42:n0 [color="#C8C142"];
+56:n1 -> 42:n1 [color="#00FF00"];
+56:n2 -> 42:n0 [color="#0000FF"];
+56:n3 -> 42:n4 [color="#FFFF00"];
+56:n4 -> 42:n2 [color="#FF00FF"];
+53:n0 -> 56:n0 [color="#C8C142"];
+53:n1 -> 56:n1 [color="#00FF00"];
+53:n2 -> 56:n2 [color="#0000FF"];
+53:n3 -> 56:n3 [color="#FFFF00"];
+53:n4 -> 56:n4 [color="#FF00FF"];
+50:n0 -> 53:n0 [color="#C8C142"];
+50:n1 -> 53:n1 [color="#00FF00"];
+50:n2 -> 53:n2 [color="#0000FF"];
+50:n3 -> 53:n3 [color="#FFFF00"];
+50:n4 -> 53:n4 [color="#FF00FF"];
+}
