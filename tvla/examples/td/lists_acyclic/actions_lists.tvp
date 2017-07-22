@@ -142,3 +142,33 @@
   %message ( E(v) !r[n,lhs](v) ) -> 
            "There may be a list element not reachable from variable " + lhs + "!"
 }
+
+///////////////////////////////////////////////////////////////////////////
+// colors-list
+%action Set_False_L(lhs) {
+  %t lhs + " = false"
+  {
+    lhs() = 0
+  }
+}
+
+%action Is_True_Var(lhs) {
+  %t lhs + " == true"
+  %p lhs()
+}
+
+%action Is_False_Var(lhs) {
+  %t lhs + " == false"
+  %p !lhs()
+}
+
+%action Get_Color_L(lhs, rhs) {
+  %t lhs + " = " + rhs + "->" + color
+  %f { E(v_1, v_2) rhs(v_1) & n(v_1, v_2) &  t[n](v_2, v) }
+  %message (!E(v) rhs(v)) ->
+           "Illegal dereference to\n" + n + " component of " + rhs
+  {
+    lhs(v) = E(v_1) rhs(v_1) & n(v_1, v)
+  }
+}
+
