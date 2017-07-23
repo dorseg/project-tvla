@@ -41,6 +41,6 @@ foreach (z in PVar) {
 ///////////////////////////////////////////// 
 // Colored-list predicates
 
-%p color(v)
+%p color(v) unique
 
 %i altlist[n](v) = A(w) (n(v,w) & color(v) & !color(w))

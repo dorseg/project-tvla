@@ -164,11 +164,21 @@
 
 %action Get_Color_L(lhs, rhs) {
   %t lhs + " = " + rhs + "->" + color
-  %f { E(v_1, v_2) rhs(v_1) & n(v_1, v_2) &  t[n](v_2, v) }
+  %f { rhs(v) }
   %message (!E(v) rhs(v)) ->
-           "Illegal dereference to\n" + n + " component of " + rhs
+           "Illegal dereference to\n" + color + " component of " + rhs
   {
-    lhs(v) = E(v_1) rhs(v_1) & n(v_1, v)
+    lhs(v) = E(v) rhs(v) & color(v)
+  }
+}
+
+%action Flip_Color_L(lhs) {
+  %t lhs + "->" + color " = " + "!" + lhs + "->" + color
+  %f { rhs(v) }
+  %message (!E(v) rhs(v)) ->
+          "Illegal dereference to\n" + color + " component of " + lhs
+  {
+    color(v) = E(v) lhs(v) & !color(v)
   }
 }
 
