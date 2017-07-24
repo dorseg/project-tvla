@@ -44,3 +44,5 @@ foreach (z in PVar) {
 %p color(v) unique
 
 %i altlist[n](v) = A(w) (n(v,w) & color(v) & !color(w))
+
+%i lastColor(v) = E(v) (!E(w) n(v,w) & color(v))
