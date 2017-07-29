@@ -181,4 +181,3 @@
     color(v) = E(v) lhs(v) & !color(v)
   }
 }
-
