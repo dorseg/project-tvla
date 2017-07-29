@@ -6,18 +6,20 @@
        x = {head}
        t[n] = {head->head, head->tail, tail->tail:1/2}
        r[n,x] = {head, tail}
+       color = {head:1/2, tail:1/2}
+       old_color = {head:1/2, tail:1/2}
+       altlist[n] = {head, tail}
 }
 
 // An acyclic singly-linked list with a single element pointed by x.
 %n = {head}
 %p = {
        x = {head}
-       color = {head:1/2}
-       altlist[x,n] = {head}
-       lastColor = {head:1/2}
        t[n] = {head->head}
        r[n,x] = {head}
-       lastColor(x) = {head}
+       color = {head:1/2}
+       old_color = {head:1/2}
+       altlist[n] = {head}
 }
 
 // An empty list (x points to NULL).

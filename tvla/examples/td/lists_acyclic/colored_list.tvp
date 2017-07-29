@@ -1,0 +1,46 @@
+///////
+// Sets
+
+%s PVar {x, e, p}
+%p c()  // Represents a boolean variable.
+
+#include "predicates_lists.tvp"
+
+%%
+
+#include "actions_lists.tvp"
+
+%%
+
+///////////////////////////////////////////////////////////////////////
+// x is the head of list
+// Transition system to find the color (variable c)
+// of the last element of a list.
+// p represents the last node in the list.
+
+L1 Copy_Var_L(e,x)     L2   // e = x;  
+L2 Set_False_L(c)      L3   // c = false;
+L3 Is_Null_Var(e)      L7   // while (e != NULL) {
+L3 Is_Not_Null_Var(e)  L4
+L4 Copy_Var_L(p,e)	   L5   //   p = e;
+L5 Set_Old_Color(p)    L6   //   p->old_color = p->color;
+L6 Get_Next_L(e,e)     L3   //   e = e->n;
+                            // }
+// p now points to the last element
+L7 Get_Color_L(c,p)    L8   //  c = p->color;
+L8 Is_True_Var(c)	   exit //  if(!c)
+L8 Is_False_Var(c)	   L9
+
+// Transition system to flip the colors of the list.
+
+L9 Copy_Var_L(e,x)     L10   // e = x;  
+L10 Is_Null_Var(e)     exit  // while (e != NULL) {
+L10 Is_Not_Null_Var(e) L11
+L11 Flip_Color_L(e)    L12   //   e->color = !e->color;
+L12 Get_Next_L(e,e)    L10   //   e = e->n;
+                             // }
+
+exit Assert_ListInvariants(x)     error
+exit Assert_No_Leak(x)            error
+exit Assert_Alternating_Colors(x) error
+exit Assert_Fliped(x, p)		  error

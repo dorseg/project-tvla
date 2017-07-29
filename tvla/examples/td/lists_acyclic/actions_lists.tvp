@@ -168,16 +168,44 @@
   %message (!E(v) rhs(v)) ->
            "Illegal dereference to\n" + color + " component of " + rhs
   {
-    lhs(v) = E(v) rhs(v) & color(v)
+    lhs() = E(v) rhs(v) & color(v)
+  }
+}
+
+%action Set_Old_Color(lhs) {
+  %t lhs + "->" + old_color + " = " + lhs + "->" + color
+  %f { lhs(v) }
+  %message (!E(v) lhs(v)) ->
+           "Illegal dereference to\n" + old_color + " component of " + lhs
+  {
+    old_color(v) = (lhs(v) ? color(v) : old_color(v))
   }
 }
 
 %action Flip_Color_L(lhs) {
-  %t lhs + "->" + color " = " + "!" + lhs + "->" + color
-  %f { rhs(v) }
-  %message (!E(v) rhs(v)) ->
+  %t lhs + "->" + color + " = " + "!" + lhs + "->" + color
+  %f { lhs(v) }
+  %message (!E(v) lhs(v)) ->
           "Illegal dereference to\n" + color + " component of " + lhs
   {
-    color(v) = E(v) lhs(v) & !color(v)
+    color(v) = (lhs(v) ? !color(v) : color(v)) 
   }
+}
+
+%action Assert_Alternating_Colors(lhs) {
+  %t "Assert_Alternating_Colors(" + lhs + ")"
+  %f { lhs(v) }
+  %p !(A(v) r[n,lhs](v) & altlist[n](v))
+  %message !(A(v) r[n,lhs](v) & altlist[n](v)) -> 
+           "The list pointed by " + lhs + " may not be a list where the colors alternate!"
+}
+
+%action Assert_Fliped(lhs, last) {
+  %t "Assert_Fliped(" + lhs + ", " + last + ")"
+  %f { lhs(v), last(v), old_color(v), color(v) }
+  %p !(E(v) last(v) & !old_color(v) ? (A(w) (color(w) <-> !old_color(w)))
+                                    : (A(w) (color(w) <-> old_color(w))))
+  %message !(E(v) last(v) & !old_color(v) ? (A(w) (color(w) <-> !old_color(w)))
+                                    : (A(w) (color(w) <-> old_color(w)))) ->
+          "The list pointed by " + lhs + " where the last color is " + last + " may not be fliped!"
 }
