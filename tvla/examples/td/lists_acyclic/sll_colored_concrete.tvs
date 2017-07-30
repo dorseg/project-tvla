@@ -1,0 +1,11 @@
+// An acyclic singly-linked list (where the colors alternate) with two or more elements pointed by program x.
+%n = {head, mid, tail}
+%p = {
+       n = {head->mid, mid->tail}
+       x = {head}
+       t[n] = {head->head, head->mid, tail->tail, mid->mid, head->tail, mid->tail}
+       r[n,x] = {head, mid, tail}
+       color = {head, tail}
+       old_color = {head, tail}
+       altlist[n] = {head, mid, tail}
+}

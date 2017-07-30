@@ -45,4 +45,4 @@ foreach (z in PVar) {
 
 %p old_color(v) unique
 
-%i altlist[n](v) = E(w) (n(v, w) & (color(v) <-> !color(w)))
+%i altlist[n](v) = E(w) (n(v, w) -> (color(v) <-> !color(w)))
