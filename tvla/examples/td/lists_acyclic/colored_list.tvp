@@ -43,4 +43,4 @@ L12 Get_Next_L(e,e)    L10   //   e = e->n;
 exit Assert_ListInvariants(x)     error
 exit Assert_No_Leak(x)            error
 exit Assert_Alternating_Colors(x) error
-exit Assert_Fliped(x, p)		  error
+exit Assert_Fliped(x)		  	  error

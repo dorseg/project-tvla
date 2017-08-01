@@ -7,8 +7,8 @@
        t[n] = {head->head, head->tail, tail->tail:1/2}
        r[n,x] = {head, tail}
        color = {head:1/2, tail:1/2}
-       old_color = {head:1/2, tail:1/2}
        altlist[n] = {head, tail}
+       last_node = {tail:1/2}
 }
 
 // An acyclic singly-linked list with a single element pointed by x.
@@ -18,11 +18,6 @@
        t[n] = {head->head}
        r[n,x] = {head}
        color = {head:1/2}
-       old_color = {head:1/2}
        altlist[n] = {head}
-}
-
-// An empty list (x points to NULL).
-%n = {}
-%p = {
+       last_node = {head}
 }

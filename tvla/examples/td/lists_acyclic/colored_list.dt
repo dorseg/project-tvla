@@ -37,48 +37,791 @@ colored_list->"L1";
 "exit"->"error"[label="assertListInvariants(x)"];
 "exit"->"error"[label="assertNoLeak(x)"];
 "exit"->"error"[label="Assert_Alternating_Colors(x)"];
-"exit"->"error"[label="Assert_Fliped(x, p)"];
+"exit"->"error"[label="Assert_Fliped(x)"];
 }
 
 // Page number 2
 digraph msg {size = "7.5,10";center=true;"Program Location\nL1" [shape=box, fontsize=80]; }
 
 // Page number 3
-digraph msg {size = "7.5,10";center=true;"Program Location\nL2" [shape=box, fontsize=80]; }
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\nr[n,x]\ncolor=1/2\nlast_node=1/2", peripheries=2];
+"x"->"0";
+"0" [label="0\naltlist[n]\nr[n,x]\ncolor=1/2"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
 
 // Page number 4
-digraph msg {size = "7.5,10";center=true;"Program Location\nL3" [shape=box, fontsize=80]; }
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"x"->"1";
+"1" [label="1\naltlist[n]\nlast_node\nr[n,x]\ncolor=1/2"];
+"1"->"1" [label="t[n]"];
+}
 
 // Page number 5
-digraph msg {size = "7.5,10";center=true;"Program Location\nL7" [shape=box, fontsize=80]; }
+digraph msg {size = "7.5,10";center=true;"Program Location\nL2" [shape=box, fontsize=80]; }
 
 // Page number 6
-digraph msg {size = "7.5,10";center=true;"Program Location\nL4" [shape=box, fontsize=80]; }
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,x]\ncolor=1/2\nlast_node=1/2", peripheries=2];
+"e"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\nr[n,e]\nr[n,x]\ncolor=1/2"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
 
 // Page number 7
-digraph msg {size = "7.5,10";center=true;"Program Location\nL5" [shape=box, fontsize=80]; }
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\nlast_node\nr[n,e]\nr[n,x]\ncolor=1/2"];
+"1"->"1" [label="t[n]"];
+}
 
 // Page number 8
-digraph msg {size = "7.5,10";center=true;"Program Location\nL6" [shape=box, fontsize=80]; }
+digraph msg {size = "7.5,10";center=true;"Program Location\nL3" [shape=box, fontsize=80]; }
 
 // Page number 9
-digraph msg {size = "7.5,10";center=true;"Program Location\nL8" [shape=box, fontsize=80]; }
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,x]\ncolor=1/2\nlast_node=1/2", peripheries=2];
+"e"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\nr[n,e]\nr[n,x]\ncolor=1/2"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
 
 // Page number 10
-digraph msg {size = "7.5,10";center=true;"Program Location\nexit" [shape=box, fontsize=80]; }
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\nlast_node\nr[n,e]\nr[n,x]\ncolor=1/2"];
+"1"->"1" [label="t[n]"];
+}
 
 // Page number 11
-digraph msg {size = "7.5,10";center=true;"Program Location\nL9" [shape=box, fontsize=80]; }
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"1";
+"1" [label="1\naltlist[n]\nlast_node\nr[n,e]\nr[n,p]\nr[n,x]"];
+"p"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,p]\nr[n,x]"];
+"0"->"1" [label="n"];
+"1"->"1" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
 
 // Page number 12
-digraph msg {size = "7.5,10";center=true;"Program Location\nL10" [shape=box, fontsize=80]; }
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"2";
+"2" [label="2\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]\nlast_node=1/2"];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]\nlast_node=1/2", peripheries=2];
+"p"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,p]\nr[n,x]"];
+"2"->"1" [label="n", style=dotted];
+"1"->"1" [label="n", style=dotted];
+"0"->"2" [label="n"];
+"2"->"2" [label="t[n]"];
+"2"->"1" [label="t[n]"];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"2" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
 
 // Page number 13
-digraph msg {size = "7.5,10";center=true;"Program Location\nL11" [shape=box, fontsize=80]; }
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"p"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\nlast_node\nr[n,p]\nr[n,x]"];
+"1"->"1" [label="t[n]"];
+}
 
 // Page number 14
-digraph msg {size = "7.5,10";center=true;"Program Location\nL12" [shape=box, fontsize=80]; }
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"p"->"1";
+"1" [label="1\naltlist[n]\nlast_node\nr[n,p]\nr[n,x]"];
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"0"->"1" [label="n"];
+"1"->"1" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
 
 // Page number 15
+digraph msg {size = "7.5,10";center=true;"Program Location\nL7" [shape=box, fontsize=80]; }
+
+// Page number 16
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"p"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\nlast_node\nr[n,p]\nr[n,x]"];
+"1"->"1" [label="t[n]"];
+}
+
+// Page number 17
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"p"->"1";
+"1" [label="1\naltlist[n]\nlast_node\nr[n,p]\nr[n,x]"];
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"0"->"1" [label="n"];
+"1"->"1" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 18
+digraph msg {size = "7.5,10";center=true;"Program Location\nL4" [shape=box, fontsize=80]; }
+
+// Page number 19
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,x]\ncolor=1/2\nlast_node=1/2", peripheries=2];
+"e"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\nr[n,e]\nr[n,x]\ncolor=1/2"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 20
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\nlast_node\nr[n,e]\nr[n,x]\ncolor=1/2"];
+"1"->"1" [label="t[n]"];
+}
+
+// Page number 21
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"1";
+"1" [label="1\naltlist[n]\nlast_node\nr[n,e]\nr[n,p]\nr[n,x]"];
+"p"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,p]\nr[n,x]"];
+"0"->"1" [label="n"];
+"1"->"1" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 22
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"2";
+"2" [label="2\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]\nlast_node=1/2"];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]\nlast_node=1/2", peripheries=2];
+"p"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,p]\nr[n,x]"];
+"2"->"1" [label="n", style=dotted];
+"1"->"1" [label="n", style=dotted];
+"0"->"2" [label="n"];
+"2"->"2" [label="t[n]"];
+"2"->"1" [label="t[n]"];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"2" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 23
+digraph msg {size = "7.5,10";center=true;"Program Location\nL5" [shape=box, fontsize=80]; }
+
+// Page number 24
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]\ncolor=1/2\nlast_node=1/2", peripheries=2];
+"e"->"0";
+"p"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]\ncolor=1/2"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 25
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"1";
+"p"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\nlast_node\nr[n,e]\nr[n,p]\nr[n,x]\ncolor=1/2"];
+"1"->"1" [label="t[n]"];
+}
+
+// Page number 26
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"1";
+"p"->"1";
+"1" [label="1\naltlist[n]\nlast_node\nr[n,e]\nr[n,p]\nr[n,x]"];
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"0"->"1" [label="n"];
+"1"->"1" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 27
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"2";
+"p"->"2";
+"2" [label="2\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]\nlast_node=1/2"];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]\nlast_node=1/2", peripheries=2];
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"2"->"1" [label="n", style=dotted];
+"1"->"1" [label="n", style=dotted];
+"0"->"2" [label="n"];
+"2"->"2" [label="t[n]"];
+"2"->"1" [label="t[n]"];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"2" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 28
+digraph msg {size = "7.5,10";center=true;"Program Location\nL6" [shape=box, fontsize=80]; }
+
+// Page number 29
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]\nlast_node=1/2", peripheries=2];
+"e"->"0";
+"p"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 30
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]\nlast_node=1/2", peripheries=2];
+"e"->"0";
+"p"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,p]\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 31
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"1";
+"p"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\nlast_node\nr[n,e]\nr[n,p]\nr[n,x]"];
+"1"->"1" [label="t[n]"];
+}
+
+// Page number 32
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"1";
+"p"->"1";
+"1" [label="1\naltlist[n]\nlast_node\nr[n,e]\nr[n,p]\nr[n,x]"];
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"0"->"1" [label="n"];
+"1"->"1" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 33
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"2";
+"p"->"2";
+"2" [label="2\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]\nlast_node=1/2"];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]\nlast_node=1/2", peripheries=2];
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"2"->"1" [label="n", style=dotted];
+"1"->"1" [label="n", style=dotted];
+"0"->"2" [label="n"];
+"2"->"2" [label="t[n]"];
+"2"->"1" [label="t[n]"];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"2" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 34
+digraph msg {size = "7.5,10";center=true;"Program Location\nL8" [shape=box, fontsize=80]; }
+
+// Page number 35
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"p"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\nlast_node\nr[n,p]\nr[n,x]"];
+"1"->"1" [label="t[n]"];
+}
+
+// Page number 36
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"p"->"1";
+"1" [label="1\naltlist[n]\nlast_node\nr[n,p]\nr[n,x]"];
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"0"->"1" [label="n"];
+"1"->"1" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 37
+digraph msg {size = "7.5,10";center=true;"Program Location\nexit" [shape=box, fontsize=80]; }
+
+// Page number 38
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"p"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\ncolor\nlast_node\nr[n,p]\nr[n,x]"];
+"1"->"1" [label="t[n]"];
+}
+
+// Page number 39
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"p"->"1";
+"1" [label="1\naltlist[n]\ncolor\nlast_node\nr[n,p]\nr[n,x]"];
+"x"->"0";
+"0" [label="0\naltlist[n]\nold_color\nr[n,x]"];
+"0"->"1" [label="n"];
+"1"->"1" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 40
+digraph msg {size = "7.5,10";center=true;"Program Location\nL9" [shape=box, fontsize=80]; }
+
+// Page number 41
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"p"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\nlast_node\nr[n,p]\nr[n,x]"];
+"1"->"1" [label="t[n]"];
+}
+
+// Page number 42
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"p"->"1";
+"1" [label="1\naltlist[n]\nlast_node\nr[n,p]\nr[n,x]"];
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"0"->"1" [label="n"];
+"1"->"1" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 43
+digraph msg {size = "7.5,10";center=true;"Program Location\nL10" [shape=box, fontsize=80]; }
+
+// Page number 44
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"1";
+"p"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\nlast_node\nr[n,e]\nr[n,p]\nr[n,x]"];
+"1"->"1" [label="t[n]"];
+}
+
+// Page number 45
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"p"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\ncolor\nlast_node\nr[n,p]\nr[n,x]"];
+"1"->"1" [label="t[n]"];
+}
+
+// Page number 46
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"p"->"1";
+"1" [label="1\naltlist[n]\nlast_node\nr[n,e]\nr[n,p]\nr[n,x]"];
+"e"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,x]"];
+"0"->"1" [label="n"];
+"1"->"1" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 47
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"1";
+"p"->"1";
+"1" [label="1\naltlist[n]\nlast_node\nr[n,e]\nr[n,p]\nr[n,x]"];
+"x"->"0";
+"0" [label="0\nold_color\nr[n,x]"];
+"0"->"1" [label="n"];
+"1"->"1" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 48
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"p"->"1";
+"1" [label="1\naltlist[n]\ncolor\nlast_node\nr[n,p]\nr[n,x]"];
+"x"->"0";
+"0" [label="0\naltlist[n]\nold_color\nr[n,x]"];
+"0"->"1" [label="n"];
+"1"->"1" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 49
+digraph msg {size = "7.5,10";center=true;"Program Location\nL11" [shape=box, fontsize=80]; }
+
+// Page number 50
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"1";
+"p"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\nlast_node\nr[n,e]\nr[n,p]\nr[n,x]"];
+"1"->"1" [label="t[n]"];
+}
+
+// Page number 51
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"p"->"1";
+"1" [label="1\naltlist[n]\nlast_node\nr[n,e]\nr[n,p]\nr[n,x]"];
+"e"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,x]"];
+"0"->"1" [label="n"];
+"1"->"1" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 52
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"1";
+"p"->"1";
+"1" [label="1\naltlist[n]\nlast_node\nr[n,e]\nr[n,p]\nr[n,x]"];
+"x"->"0";
+"0" [label="0\nold_color\nr[n,x]"];
+"0"->"1" [label="n"];
+"1"->"1" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 53
+digraph msg {size = "7.5,10";center=true;"Program Location\nL12" [shape=box, fontsize=80]; }
+
+// Page number 54
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"1";
+"p"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\ncolor\nlast_node\nr[n,e]\nr[n,p]\nr[n,x]"];
+"1"->"1" [label="t[n]"];
+}
+
+// Page number 55
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"p"->"1";
+"1" [label="1\naltlist[n]\nlast_node\nr[n,e]\nr[n,p]\nr[n,x]"];
+"e"->"0";
+"x"->"0";
+"0" [label="0\nold_color\nr[n,e]\nr[n,x]"];
+"0"->"1" [label="n"];
+"1"->"1" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 56
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"1";
+"p"->"1";
+"1" [label="1\naltlist[n]\ncolor\nlast_node\nr[n,e]\nr[n,p]\nr[n,x]"];
+"x"->"0";
+"0" [label="0\naltlist[n]\nold_color\nr[n,x]"];
+"0"->"1" [label="n"];
+"1"->"1" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 57
 digraph msg {size = "7.5,10";center=true;"Program Location\nerror" [shape=box, fontsize=80]; }
+
+// Page number 58
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"p"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\ncolor\nlast_node\nr[n,p]\nr[n,x]"];
+"1"->"1" [label="t[n]"];
+}
+
+// Page number 59
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"p"->"1";
+"1" [label="1\naltlist[n]\ncolor\nlast_node\nr[n,p]\nr[n,x]"];
+"x"->"0";
+"0" [label="0\naltlist[n]\nold_color\nr[n,x]"];
+"0"->"1" [label="n"];
+"1"->"1" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
 
