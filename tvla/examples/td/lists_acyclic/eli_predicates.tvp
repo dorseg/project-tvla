@@ -1,0 +1,87 @@
+/*
+Eli Simhayev - 2017
+*/
+
+//////////////////
+// Core Predicates
+
+// For every program variable z there is a unary predicate that holds for
+// list elements pointed by z.
+// The unique property is used to convey the fact that the predicate can hold
+// for at most one individual.
+// The pointer property is a visualization hint for graphical renderers.
+foreach (z in PVar) {
+  %p z(v_1) unique pointer
+}
+
+// The predicate n represents the n field of the list data type.
+%p n(v_1, v_2) function acyclic
+
+/////////////////////////////////////////////
+// Instrumentation (i.e., derived) predicates
+
+// The is[n] predicate holds for list elements pointed by two different
+// list elements.
+%i is[n](v) =   E(v_1, v_2) (v_1 != v_2 & n(v_1, v) & n(v_2, v))
+
+// The t[n] predicate records transitive reflexive reachability between
+// list elements along the n field.
+%i t[n](v_1, v_2) = n*(v_1, v_2) transitive reflexive
+
+// Integrity constraints for transitive reachability
+%r !t[n](v_1, v_2) ==> !n(v_1, v_2)
+%r !t[n](v_1, v_2) ==> v_1 != v_2
+%r E(v_1) (t[n](v_1, v_2) & t[n](v_1, v_3) & !t[n](v_2, v_3)) ==> t[n](v_3, v_2)
+
+// For every program variable z the predicate r[n,z] holds for individual
+// v when v is reachable from variable z along the n field (more formally,
+// the corresponding list element is reachable from z).
+foreach (z in PVar) {
+  %i r[n,z](v) =  E(v_1) (z(v_1) & t[n](v_1, v))
+}
+
+/////////////////////////////////////
+// Predicates related to color data
+
+// The predicate color represents the color field of a node in the list.
+%p color(v) 
+
+// The predicate last_node used to capture the last node in the list,
+// to later get his color.
+%i last_node(v) = A(v_1) !n(v, v_1) 
+
+// The predicate alter[n] holds for nodes that have different color from their next (if next exist).
+// That is, if the color of a node is v then the color of the next node is !v.
+%i alter[n](v) = A(v_1) (n(v, v_1) -> (color(v) <-> !color(v_1)))
+
+
+/////////////////////////////////////
+// Snapshot predicates
+
+// The predicate old_color used to take a snapshot of the color field of each node in the list.
+// (See Copy_Color_L in eli_actions.tvp).
+%p old_color(v)
+
+// The predicate old_r[n,z] is used to take a snapshot of the part of the
+// heap reachable from pointer variable z via dereferences of field n.
+// (See Copy_Reach_L in eli_actions.tvp).
+foreach (z in Hvar) {
+  %p old_r[n,z](v) 
+}
+
+/////////////////////////////////////
+// Predicates to assert the 'flip' conditions.
+
+// The predicate last_color used to capture the color of the last node.
+// (see Assert_Flip in eli_actions.tvp).
+%i last_color() = A(v) (last_node(v) -> color(v))
+
+
+// The predicate same_colors used to compare colors in the ouput list and the input list.
+// (see Assert_Flip in eli_actions.tvp).
+%i same_colors() = A(v) (color(v) <-> old_color(v))
+
+// The predicate negated_colors used to compare colors in the ouput list and 
+// the negation colors of the input list.
+// (see Assert_Flip in eli_actions.tvp).
+%i negated_colors() = A(v) (color(v) <-> !old_color(v))

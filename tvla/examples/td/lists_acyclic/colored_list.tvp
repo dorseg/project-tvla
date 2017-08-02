@@ -4,11 +4,11 @@
 %s PVar {x, e, p}
 %p c()  // Represents a boolean variable.
 
-#include "predicates_lists.tvp"
+#include "predicate_colored_lists.tvp"
 
 %%
 
-#include "actions_lists.tvp"
+#include "actions_colored_lists.tvp"
 
 %%
 

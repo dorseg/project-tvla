@@ -37,16 +37,3 @@ foreach (z in PVar) {
 foreach (z in PVar) {
   %i r[n,z](v) = E(v_1) (z(v_1) & t[n](v_1, v))
 }
-
-///////////////////////////////////////////// 
-// Colored-list predicates
-
-%p color(v) unique
-
-%p old_color(v)
-
-%i last_node(v) = !E(w) n(v,w)
-
-%i last_color() = A(v) (last_node(v) -> color(v))
-
-%i altlist[n](v) = A(w) (n(v, w) -> (color(v) <-> !color(w)))
