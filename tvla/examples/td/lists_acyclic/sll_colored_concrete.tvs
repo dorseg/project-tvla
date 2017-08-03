@@ -7,5 +7,5 @@
        r[n,x] = {head, mid, tail}
        color = {head, tail}
        altlist[n] = {head, mid, tail}
-       last_node = {tail}
+       last_elem = {tail}
 }

@@ -143,8 +143,10 @@
            "There may be a list element not reachable from variable " + lhs + "!"
 }
 
-///////////////////////////////////////////////////////////////////////////
-// colors-list
+//=============================== Colored list actions ===============================
+
+////////////// Actions for manipulating booleans
+
 %action Set_False_L(lhs) {
   %t lhs + " = false"
   {
@@ -162,6 +164,8 @@
   %p !lhs()
 }
 
+////////////// Actions for manipulating colors
+
 %action Get_Color_L(lhs, rhs) {
   %t lhs + " = " + rhs + "->" + color
   %f { rhs(v) & color(v) }
@@ -172,6 +176,7 @@
   }
 }
 
+// taking a snapshot of the inital color of each element in the list
 %action Set_Old_Colors() {
   %t "Set_Old_Colors()"
   %f { color(v) }
@@ -180,6 +185,7 @@
   }
 }
 
+// flipping the color of the element pointed by lhs. for all other elements, the action preserves its current color.
 %action Flip_Color_L(lhs) {
   %t lhs + "->" + color + " = " + "!" + lhs + "->" + color
   %f { lhs(v) & color(v) }
@@ -190,15 +196,23 @@
   }
 }
 
+////////////// Actions for testing various properties
+
+// assert that the colors in the list alternate.
 %action Assert_Alternating_Colors(lhs) {
   %t "Assert_Alternating_Colors(" + lhs + ")"
   %f { lhs(v) }
-  %message (!A(v) (r[n,lhs](v) -> altlist[n](v))) -> 
+  %message (!A(v) r[n,lhs](v) & altlist[n](v)) -> 
            "The list pointed by " + lhs + " may not be an alternating list"
 }
 
+// assert the following: if the last_color = 1 then the color of each element should be the same as input list.
+//                       otherwise, the current colors should be negated with respect to the input list.
+// note: last_color is the color of the last element in the input list. 
 %action Assert_Flipped(lhs) {
   %t "Assert_Flipped(" + lhs + ")"
-  %message (last_color() ? (!A(w) (color(w) <-> old_color(w))) : (!A(w) (color(w) <-> !old_color(w)))) ->
-          "The colors of the list pointed by " + lhs + " may not changed"
+  %message (last_color() & !A(v) (color(v) <-> old_color(v))) ->
+          "The colors of the list pointed by " + lhs + " should be negated with respect to the input list"
+  %message (!last_color() & !A(v) (color(v) <-> !old_color(v))) ->
+          "The colors of the list pointed by " + lhs + " should be the same as the input list"
 }

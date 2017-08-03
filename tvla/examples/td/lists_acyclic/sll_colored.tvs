@@ -8,7 +8,7 @@
        r[n,x] = {head, tail}
        color = {head:1/2, tail:1/2}
        altlist[n] = {head, tail}
-       last_node = {tail:1/2}
+       last_elem = {tail:1/2}
 }
 
 // An acyclic singly-linked list with a single element pointed by x.
@@ -19,5 +19,5 @@
        r[n,x] = {head}
        color = {head:1/2}
        altlist[n] = {head}
-       last_node = {head}
+       last_elem = {head}
 }

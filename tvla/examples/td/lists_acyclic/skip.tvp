@@ -1,23 +1,22 @@
-/*
-Eli Simhayev - 2017
-*/
-
 ///////
 // Sets
 
-%s PVar {p, x, e} // Names of pointer variables.
-%s Hvar {x}       // Names of pointer variables used for taking heap snapshots.
+%s PVar {x, e, p}
+%p c()  // Represents a boolean variable.
 
-#include "eli_predicates.tvp"
-
-%%
-
-#include "eli_actions.tvp"
+#include "predicate_colored_lists.tvp"
 
 %%
 
-L1 skip() exit
+#include "actions_colored_lists.tvp"
 
-exit Assert_ListInvariants(x)	 exit2 	
-exit Assert_No_Leak(x)        	 exit2 	
-exit Assert_Flip(x)   			 exit2 
+%%
+
+///////////////////////////////////////////////////////////////////////
+
+L0 skip() exit
+
+exit Assert_ListInvariants(x)     error
+exit Assert_No_Leak(x)            error
+exit Assert_Alternating_Colors(x) error
+exit Assert_Flipped(x)		  	  error
