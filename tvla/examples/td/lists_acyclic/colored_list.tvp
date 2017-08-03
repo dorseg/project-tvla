@@ -18,12 +18,12 @@
 // of the last element of a list.
 // p represents the last node in the list.
 
+L0 Set_Old_Colors()    L1
 L1 Copy_Var_L(e,x)     L2   // e = x;  
 L2 Set_False_L(c)      L3   // c = false;
 L3 Is_Null_Var(e)      L7   // while (e != NULL) {
 L3 Is_Not_Null_Var(e)  L4
-L4 Copy_Var_L(p,e)	   L5   //   p = e;
-L5 Set_Old_Color(p)    L6   //   p->old_color = p->color;
+L4 Copy_Var_L(p,e)	   L6   //   p = e;
 L6 Get_Next_L(e,e)     L3   //   e = e->n;
                             // }
 // p now points to the last element

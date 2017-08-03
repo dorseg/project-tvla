@@ -172,13 +172,11 @@
   }
 }
 
-%action Set_Old_Color(lhs) {
-  %t lhs + "->" + old_color + " = " + lhs + "->" + color
-  %f { lhs(v) & color(v) & old_color(v)}
-  %message (!E(v) lhs(v)) ->
-           "Illegal dereference to\n" + old_color + " component of " + lhs
+%action Set_Old_Colors() {
+  %t "Set_Old_Colors()"
+  %f { color(v) }
   {
-    old_color(v) = (lhs(v) ? color(v) : old_color(v))
+    old_color(v) = color(v)
   }
 }
 
@@ -199,10 +197,8 @@
            "The list pointed by " + lhs + " may not be an alternating list"
 }
 
-%action Assert_Fliped(lhs) {
-  %t "Assert_Fliped(" + lhs + ")"
-  %message (last_color() <-> same_list()) ->
-          "The colors of the list pointed by " + lhs + " should be negated with respect to the input list"
-  %message (!last_color() <-> flipped_list()) ->
-          "The colors of the list pointed by " + lhs + " should be the same as the input list"
+%action Assert_Flipped(lhs) {
+  %t "Assert_Flipped(" + lhs + ")"
+  %message (last_color() ? (!A(w) (color(w) <-> old_color(w))) : (!A(w) (color(w) <-> !old_color(w)))) ->
+          "The colors of the list pointed by " + lhs + " may not changed"
 }
