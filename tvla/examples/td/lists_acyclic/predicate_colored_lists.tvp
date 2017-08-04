@@ -48,6 +48,11 @@ foreach (z in PVar) {
 // snapshot of the initial color of each element
 %p old_color(v)
 
+// snapshot of the initial reachability
+foreach (z in PVar) {
+  %p old_r[n,z](v)
+}
+
 /////////////////////////////////////////////
 // Instrumentation (i.e., derived) predicates
 
