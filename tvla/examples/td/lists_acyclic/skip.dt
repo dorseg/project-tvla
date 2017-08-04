@@ -7,12 +7,14 @@ skip[style=bold];
 skip->"L0";
 "exit" [label="exit", shape=box, style=bold, color=gray, style=filled];
 "L0" [label="L0", shape=box, style=bold, color=gray, style=filled];
+"L1" [label="L1", shape=box, style=bold, color=gray, style=filled];
 "error" [label="error", shape=box, style=bold, color=gray, style=filled];
 "exit"->"error"[label="assertListInvariants(x)"];
 "exit"->"error"[label="assertNoLeak(x)"];
 "exit"->"error"[label="Assert_Alternating_Colors(x)"];
 "exit"->"error"[label="Assert_Flipped(x)"];
-"L0"->"exit"[label="skip"];
+"L0"->"L1"[label="Set_Old_Colors()"];
+"L1"->"exit"[label="skip"];
 }
 
 // Page number 2
@@ -23,7 +25,7 @@ digraph structure {
 size="7.5,10";center=true;fonstsize=6;
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"1" [label="1\naltlist[n]\nr[n,x]\ncolor=1/2\nlast_node=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\ncolor=1/2\nlast_elem=1/2", peripheries=2];
 "x"->"0";
 "0" [label="0\naltlist[n]\nr[n,x]\ncolor=1/2"];
 "1"->"1" [label="n", style=dotted];
@@ -39,22 +41,19 @@ size="7.5,10";center=true;fonstsize=6;
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
 "x"->"1";
-"1" [label="1\naltlist[n]\nlast_node\nr[n,x]\ncolor=1/2"];
+"1" [label="1\naltlist[n]\nlast_elem\nr[n,x]\ncolor=1/2"];
 "1"->"1" [label="t[n]"];
 }
 
 // Page number 5
-digraph msg {size = "7.5,10";center=true;"Program Location\nexit" [shape=box, fontsize=80]; }
+digraph msg {size = "7.5,10";center=true;"Program Location\nL1" [shape=box, fontsize=80]; }
 
 // Page number 6
-digraph msg {size = "7.5,10";center=true;"Messages for\nexit" [shape=box, fontsize=80]; }
-// Page number 7
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
-subgraph cluster_lab { label = "The colors of the list pointed by x may not change\nd";
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"1" [label="1\naltlist[n]\nr[n,x]\nlast_node=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
 "0" [label="0\naltlist[n]\nr[n,x]"];
 "1"->"1" [label="n", style=dotted];
@@ -63,15 +62,32 @@ ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
 }
+
+// Page number 7
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
 }
 
 // Page number 8
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
-subgraph cluster_lab { label = "The colors of the list pointed by x may not change\nd";
-ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"1" [label="1\naltlist[n]\ncolor\nr[n,x]\nlast_node=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
 "0" [label="0\naltlist[n]\nr[n,x]"];
 "1"->"1" [label="n", style=dotted];
@@ -79,60 +95,66 @@ ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "1"->"1" [label="t[n]", style=dotted];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
-}
 }
 
 // Page number 9
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
-subgraph cluster_lab { label = "The colors of the list pointed by x may not change\nd";
-ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"2" [label="2\naltlist[n]\ncolor\nr[n,x]\nlast_node=1/2", peripheries=2];
-"1" [label="1\naltlist[n]\nr[n,x]\nlast_node=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\ncolor\nr[n,x]"];
-"2"->"2" [label="n", style=dotted];
-"2"->"1" [label="n", style=dotted, dir=both];
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
 "1"->"1" [label="n", style=dotted];
-"0"->"2" [label="n", style=dotted];
 "0"->"1" [label="n", style=dotted];
-"2"->"2" [label="t[n]", style=dotted];
-"2"->"1" [label="t[n]", style=dotted, dir=both];
 "1"->"1" [label="t[n]", style=dotted];
-"0"->"2" [label="t[n]"];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
-}
 }
 
 // Page number 10
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
-subgraph cluster_lab { label = "The colors of the list pointed by x may not change\nd";
-ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"1" [label="1\naltlist[n]\nr[n,x]\nlast_node=1/2", peripheries=2];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\ncolor\nr[n,x]"];
+"0" [label="0\naltlist[n]\nr[n,x]"];
+"2"->"2" [label="n", style=dotted];
+"2"->"1" [label="n", style=dotted, dir=both];
 "1"->"1" [label="n", style=dotted];
+"0"->"2" [label="n", style=dotted];
 "0"->"1" [label="n", style=dotted];
+"2"->"2" [label="t[n]", style=dotted];
+"2"->"1" [label="t[n]", style=dotted, dir=both];
 "1"->"1" [label="t[n]", style=dotted];
+"0"->"2" [label="t[n]"];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
-}
 }
 
 // Page number 11
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
-subgraph cluster_lab { label = "The colors of the list pointed by x may not change\nd";
-ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"2" [label="2\naltlist[n]\ncolor\nr[n,x]\nlast_node=1/2", peripheries=2];
-"1" [label="1\naltlist[n]\nr[n,x]\nlast_node=1/2", peripheries=2];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\nr[n,x]"];
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
 "2"->"2" [label="n", style=dotted];
 "2"->"1" [label="n", style=dotted, dir=both];
 "1"->"1" [label="n", style=dotted];
@@ -144,141 +166,78 @@ ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "0"->"2" [label="t[n]"];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
-}
 }
 
 // Page number 12
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
-subgraph cluster_lab { label = "The colors of the list pointed by x may not change\nd";
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
 "x"->"1";
-"1" [label="1\naltlist[n]\nlast_node\nr[n,x]"];
+"1" [label="1\naltlist[n]\nlast_elem\nr[n,x]"];
 "1"->"1" [label="t[n]"];
-}
 }
 
 // Page number 13
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
-ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
-"x" [shape=plaintext, style=bold, fontsize=16];
-"1" [label="1\naltlist[n]\nr[n,x]\ncolor=1/2\nlast_node=1/2", peripheries=2];
-"x"->"0";
-"0" [label="0\naltlist[n]\nr[n,x]\ncolor=1/2"];
-"1"->"1" [label="n", style=dotted];
-"0"->"1" [label="n", style=dotted];
-"1"->"1" [label="t[n]", style=dotted];
-"0"->"1" [label="t[n]"];
-"0"->"0" [label="t[n]"];
-}
-
-// Page number 14
-digraph structure {
-size="7.5,10";center=true;fonstsize=6;
-ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
 "x"->"1";
-"1" [label="1\naltlist[n]\nlast_node\nr[n,x]\ncolor=1/2"];
+"1" [label="1\naltlist[n]\ncolor\nlast_elem\nold_color\nr[n,x]"];
 "1"->"1" [label="t[n]"];
 }
 
-// Page number 15
-digraph msg {size = "7.5,10";center=true;"Program Location\nerror" [shape=box, fontsize=80]; }
+// Page number 14
+digraph msg {size = "7.5,10";center=true;"Program Location\nexit" [shape=box, fontsize=80]; }
 
+// Page number 15
+digraph msg {size = "7.5,10";center=true;"Messages for\nexit" [shape=box, fontsize=80]; }
 // Page number 16
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
+subgraph cluster_lab { label = "The colors of the list pointed by x should be the \nsame as the input list";
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"1" [label="1\naltlist[n]\nr[n,x]\ncolor=1/2\nlast_node=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\nr[n,x]\ncolor=1/2"];
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
 "1"->"1" [label="n", style=dotted];
 "0"->"1" [label="n", style=dotted];
 "1"->"1" [label="t[n]", style=dotted];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
+}
 }
 
 // Page number 17
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
+subgraph cluster_lab { label = "The colors of the list pointed by x should be the \nsame as the input list";
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
 "x"->"1";
-"1" [label="1\naltlist[n]\nlast_node\nr[n,x]\ncolor=1/2"];
+"1" [label="1\naltlist[n]\nlast_elem\nr[n,x]"];
 "1"->"1" [label="t[n]"];
+}
 }
 
 // Page number 18
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
-ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+subgraph cluster_lab { label = "The colors of the list pointed by x should be the \nsame as the input list";
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"1" [label="1\naltlist[n]\nr[n,x]\nlast_node=1/2", peripheries=2];
-"x"->"0";
-"0" [label="0\naltlist[n]\nr[n,x]"];
-"1"->"1" [label="n", style=dotted];
-"0"->"1" [label="n", style=dotted];
-"1"->"1" [label="t[n]", style=dotted];
-"0"->"1" [label="t[n]"];
-"0"->"0" [label="t[n]"];
-}
-
-// Page number 19
-digraph structure {
-size="7.5,10";center=true;fonstsize=6;
-ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
-"x" [shape=plaintext, style=bold, fontsize=16];
-"1" [label="1\naltlist[n]\nr[n,x]\nlast_node=1/2", peripheries=2];
-"x"->"0";
-"0" [label="0\naltlist[n]\ncolor\nr[n,x]"];
-"1"->"1" [label="n", style=dotted];
-"0"->"1" [label="n", style=dotted];
-"1"->"1" [label="t[n]", style=dotted];
-"0"->"1" [label="t[n]"];
-"0"->"0" [label="t[n]"];
-}
-
-// Page number 20
-digraph structure {
-size="7.5,10";center=true;fonstsize=6;
-ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
-"x" [shape=plaintext, style=bold, fontsize=16];
-"1" [label="1\naltlist[n]\ncolor\nr[n,x]\nlast_node=1/2", peripheries=2];
-"x"->"0";
-"0" [label="0\naltlist[n]\nr[n,x]"];
-"1"->"1" [label="n", style=dotted];
-"0"->"1" [label="n", style=dotted];
-"1"->"1" [label="t[n]", style=dotted];
-"0"->"1" [label="t[n]"];
-"0"->"0" [label="t[n]"];
-}
-
-// Page number 21
-digraph structure {
-size="7.5,10";center=true;fonstsize=6;
-ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
-"x" [shape=plaintext, style=bold, fontsize=16];
-"1" [label="1\naltlist[n]\ncolor\nr[n,x]\nlast_node=1/2", peripheries=2];
-"x"->"0";
-"0" [label="0\naltlist[n]\ncolor\nr[n,x]"];
-"1"->"1" [label="n", style=dotted];
-"0"->"1" [label="n", style=dotted];
-"1"->"1" [label="t[n]", style=dotted];
-"0"->"1" [label="t[n]"];
-"0"->"0" [label="t[n]"];
-}
-
-// Page number 22
-digraph structure {
-size="7.5,10";center=true;fonstsize=6;
-ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
-"x" [shape=plaintext, style=bold, fontsize=16];
-"2" [label="2\naltlist[n]\ncolor\nr[n,x]\nlast_node=1/2", peripheries=2];
-"1" [label="1\naltlist[n]\nr[n,x]\nlast_node=1/2", peripheries=2];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
 "0" [label="0\naltlist[n]\nr[n,x]"];
 "2"->"2" [label="n", style=dotted];
@@ -292,6 +251,94 @@ ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "0"->"2" [label="t[n]"];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
+}
+}
+
+// Page number 19
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+subgraph cluster_lab { label = "The colors of the list pointed by x should be the \nsame as the input list";
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"x"->"0";
+"0" [label="0\naltlist[n]\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+}
+
+// Page number 20
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+subgraph cluster_lab { label = "The colors of the list pointed by x should be the \nsame as the input list";
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+}
+
+// Page number 21
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+subgraph cluster_lab { label = "The colors of the list pointed by x should be the \nsame as the input list";
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"2"->"2" [label="n", style=dotted];
+"2"->"1" [label="n", style=dotted, dir=both];
+"1"->"1" [label="n", style=dotted];
+"0"->"2" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"2"->"2" [label="t[n]", style=dotted];
+"2"->"1" [label="t[n]", style=dotted, dir=both];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"2" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+}
+
+// Page number 22
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+subgraph cluster_lab { label = "The colors of the list pointed by x should be the \nsame as the input list";
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"x"->"0";
+"0" [label="0\naltlist[n]\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
 }
 
 // Page number 23
@@ -299,19 +346,12 @@ digraph structure {
 size="7.5,10";center=true;fonstsize=6;
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"2" [label="2\naltlist[n]\ncolor\nr[n,x]\nlast_node=1/2", peripheries=2];
-"1" [label="1\naltlist[n]\nr[n,x]\nlast_node=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\ncolor\nr[n,x]"];
-"2"->"2" [label="n", style=dotted];
-"2"->"1" [label="n", style=dotted, dir=both];
+"0" [label="0\naltlist[n]\nr[n,x]"];
 "1"->"1" [label="n", style=dotted];
-"0"->"2" [label="n", style=dotted];
 "0"->"1" [label="n", style=dotted];
-"2"->"2" [label="t[n]", style=dotted];
-"2"->"1" [label="t[n]", style=dotted, dir=both];
 "1"->"1" [label="t[n]", style=dotted];
-"0"->"2" [label="t[n]"];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
 }
@@ -321,18 +361,260 @@ digraph structure {
 size="7.5,10";center=true;fonstsize=6;
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"x"->"1";
-"1" [label="1\naltlist[n]\nlast_node\nr[n,x]"];
-"1"->"1" [label="t[n]"];
+"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
 }
 
 // Page number 25
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"x"->"0";
+"0" [label="0\naltlist[n]\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 26
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 27
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"x"->"0";
+"0" [label="0\naltlist[n]\nr[n,x]"];
+"2"->"2" [label="n", style=dotted];
+"2"->"1" [label="n", style=dotted, dir=both];
+"1"->"1" [label="n", style=dotted];
+"0"->"2" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"2"->"2" [label="t[n]", style=dotted];
+"2"->"1" [label="t[n]", style=dotted, dir=both];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"2" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 28
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"2"->"2" [label="n", style=dotted];
+"2"->"1" [label="n", style=dotted, dir=both];
+"1"->"1" [label="n", style=dotted];
+"0"->"2" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"2"->"2" [label="t[n]", style=dotted];
+"2"->"1" [label="t[n]", style=dotted, dir=both];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"2" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 29
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
 "x"->"1";
-"1" [label="1\naltlist[n]\ncolor\nlast_node\nr[n,x]"];
+"1" [label="1\naltlist[n]\nlast_elem\nr[n,x]"];
+"1"->"1" [label="t[n]"];
+}
+
+// Page number 30
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"x"->"1";
+"1" [label="1\naltlist[n]\ncolor\nlast_elem\nold_color\nr[n,x]"];
+"1"->"1" [label="t[n]"];
+}
+
+// Page number 31
+digraph msg {size = "7.5,10";center=true;"Program Location\nerror" [shape=box, fontsize=80]; }
+
+// Page number 32
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"x"->"0";
+"0" [label="0\naltlist[n]\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 33
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 34
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"x"->"0";
+"0" [label="0\naltlist[n]\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 35
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 36
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"x"->"0";
+"0" [label="0\naltlist[n]\nr[n,x]"];
+"2"->"2" [label="n", style=dotted];
+"2"->"1" [label="n", style=dotted, dir=both];
+"1"->"1" [label="n", style=dotted];
+"0"->"2" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"2"->"2" [label="t[n]", style=dotted];
+"2"->"1" [label="t[n]", style=dotted, dir=both];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"2" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 37
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"2"->"2" [label="n", style=dotted];
+"2"->"1" [label="n", style=dotted, dir=both];
+"1"->"1" [label="n", style=dotted];
+"0"->"2" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"2"->"2" [label="t[n]", style=dotted];
+"2"->"1" [label="t[n]", style=dotted, dir=both];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"2" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 38
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"x"->"1";
+"1" [label="1\naltlist[n]\nlast_elem\nr[n,x]"];
 "1"->"1" [label="t[n]"];
 }
 

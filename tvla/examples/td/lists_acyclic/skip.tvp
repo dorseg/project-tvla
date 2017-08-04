@@ -14,7 +14,8 @@
 
 ///////////////////////////////////////////////////////////////////////
 
-L0 skip() exit
+L0 Set_Old_Colors()  L1   // capturing the original colors
+L1 skip() 			 exit
 
 exit Assert_ListInvariants(x)     error
 exit Assert_No_Leak(x)            error

@@ -1,0 +1,8 @@
+// An acyclic singly-linked list with two or more elements pointed by program x.
+%n = {head, tail} 
+%p = {
+       n = {head->tail} 
+       x = {head}                   
+       t[n] = {head->head, head->tail, tail->tail}  
+       r[n,x] = {head, tail}   
+}

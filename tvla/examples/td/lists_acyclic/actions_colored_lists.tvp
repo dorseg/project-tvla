@@ -202,6 +202,7 @@
 %action Assert_Alternating_Colors(lhs) {
   %t "Assert_Alternating_Colors(" + lhs + ")"
   %f { lhs(v) }
+  %p !A(v) r[n,lhs](v) & altlist[n](v)
   %message (!A(v) r[n,lhs](v) & altlist[n](v)) -> 
            "The list pointed by " + lhs + " may not be an alternating list"
 }
@@ -211,6 +212,7 @@
 // note: last_color is the color of the last element in the input list. 
 %action Assert_Flipped(lhs) {
   %t "Assert_Flipped(" + lhs + ")"
+  %p (last_color() & !A(v) (color(v) <-> old_color(v))) | (!last_color() & !A(v) (color(v) <-> !old_color(v)))
   %message (last_color() & !A(v) (color(v) <-> old_color(v))) ->
           "The colors of the list pointed by " + lhs + " should be negated with respect to the input list"
   %message (!last_color() & !A(v) (color(v) <-> !old_color(v))) ->

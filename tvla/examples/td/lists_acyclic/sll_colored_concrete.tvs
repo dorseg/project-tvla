@@ -5,7 +5,7 @@
        x = {head}
        t[n] = {head->head, head->mid, tail->tail, mid->mid, mid->tail, head->tail}
        r[n,x] = {head, mid, tail}
-       color = {head, tail}
+       color = {mid}
        altlist[n] = {head, mid, tail}
        last_elem = {tail}
 }
