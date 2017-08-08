@@ -9,7 +9,7 @@
        color = {head:1/2, tail:1/2}
        altlist[n] = {head, tail}
        last_elem = {tail:1/2}
-       old_n = {head->tail:1/2, tail->tail:1/2}
+       old_n = {head->tail:1/2, tail->tail:1/2} // same as n
        same_order[n,old_n] = {head, tail}
 }
 

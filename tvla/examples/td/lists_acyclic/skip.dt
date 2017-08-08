@@ -11,6 +11,7 @@ skip->"L0";
 "error" [label="error", shape=box, style=bold, color=gray, style=filled];
 "exit"->"error"[label="assertListInvariants(x)"];
 "exit"->"error"[label="assertNoLeak(x)"];
+"exit"->"error"[label="Assert_Same_Order(x)"];
 "exit"->"error"[label="Assert_Alternating_Colors(x)"];
 "exit"->"error"[label="Assert_Flipped(x)"];
 "L0"->"L1"[label="Set_Old_Colors()"];
@@ -25,11 +26,13 @@ digraph structure {
 size="7.5,10";center=true;fonstsize=6;
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"1" [label="1\naltlist[n]\nr[n,x]\ncolor=1/2\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nsame_order[n,old_n]\ncolor=1/2\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\nr[n,x]\ncolor=1/2"];
+"0" [label="0\naltlist[n]\nr[n,x]\nsame_order[n,old_n]\ncolor=1/2"];
 "1"->"1" [label="n", style=dotted];
 "0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
 "1"->"1" [label="t[n]", style=dotted];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
@@ -41,7 +44,7 @@ size="7.5,10";center=true;fonstsize=6;
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
 "x"->"1";
-"1" [label="1\naltlist[n]\nlast_elem\nr[n,x]\ncolor=1/2"];
+"1" [label="1\naltlist[n]\nlast_elem\nr[n,x]\nsame_order[n,old_n]\ncolor=1/2"];
 "1"->"1" [label="t[n]"];
 }
 
@@ -53,11 +56,13 @@ digraph structure {
 size="7.5,10";center=true;fonstsize=6;
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\nr[n,x]"];
+"0" [label="0\naltlist[n]\nr[n,x]\nsame_order[n,old_n]"];
 "1"->"1" [label="n", style=dotted];
 "0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
 "1"->"1" [label="t[n]", style=dotted];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
@@ -68,11 +73,13 @@ digraph structure {
 size="7.5,10";center=true;fonstsize=6;
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]\nsame_order[n,old_n]"];
 "1"->"1" [label="n", style=dotted];
 "0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
 "1"->"1" [label="t[n]", style=dotted];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
@@ -87,11 +94,13 @@ nullary [shape=plaintext, label=<
 <TR><TD>last_color=1/2</TD></TR>
 </TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\nr[n,x]"];
+"0" [label="0\naltlist[n]\nr[n,x]\nsame_order[n,old_n]"];
 "1"->"1" [label="n", style=dotted];
 "0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
 "1"->"1" [label="t[n]", style=dotted];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
@@ -106,11 +115,13 @@ nullary [shape=plaintext, label=<
 <TR><TD>last_color=1/2</TD></TR>
 </TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]\nsame_order[n,old_n]"];
 "1"->"1" [label="n", style=dotted];
 "0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
 "1"->"1" [label="t[n]", style=dotted];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
@@ -125,15 +136,20 @@ nullary [shape=plaintext, label=<
 <TR><TD>last_color=1/2</TD></TR>
 </TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
-"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\nr[n,x]"];
+"0" [label="0\naltlist[n]\nr[n,x]\nsame_order[n,old_n]"];
 "2"->"2" [label="n", style=dotted];
 "2"->"1" [label="n", style=dotted, dir=both];
 "1"->"1" [label="n", style=dotted];
 "0"->"2" [label="n", style=dotted];
 "0"->"1" [label="n", style=dotted];
+"2"->"2" [label="old_n", style=dotted];
+"2"->"1" [label="old_n", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"2" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
 "2"->"2" [label="t[n]", style=dotted];
 "2"->"1" [label="t[n]", style=dotted, dir=both];
 "1"->"1" [label="t[n]", style=dotted];
@@ -151,15 +167,20 @@ nullary [shape=plaintext, label=<
 <TR><TD>last_color=1/2</TD></TR>
 </TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
-"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]\nsame_order[n,old_n]"];
 "2"->"2" [label="n", style=dotted];
 "2"->"1" [label="n", style=dotted, dir=both];
 "1"->"1" [label="n", style=dotted];
 "0"->"2" [label="n", style=dotted];
 "0"->"1" [label="n", style=dotted];
+"2"->"2" [label="old_n", style=dotted];
+"2"->"1" [label="old_n", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"2" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
 "2"->"2" [label="t[n]", style=dotted];
 "2"->"1" [label="t[n]", style=dotted, dir=both];
 "1"->"1" [label="t[n]", style=dotted];
@@ -174,7 +195,7 @@ size="7.5,10";center=true;fonstsize=6;
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
 "x"->"1";
-"1" [label="1\naltlist[n]\nlast_elem\nr[n,x]"];
+"1" [label="1\naltlist[n]\nlast_elem\nr[n,x]\nsame_order[n,old_n]"];
 "1"->"1" [label="t[n]"];
 }
 
@@ -188,7 +209,7 @@ nullary [shape=plaintext, label=<
 </TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
 "x"->"1";
-"1" [label="1\naltlist[n]\ncolor\nlast_elem\nold_color\nr[n,x]"];
+"1" [label="1\naltlist[n]\ncolor\nlast_elem\nold_color\nr[n,x]\nsame_order[n,old_n]"];
 "1"->"1" [label="t[n]"];
 }
 
@@ -201,50 +222,26 @@ digraph msg {size = "7.5,10";center=true;"Messages for\nexit" [shape=box, fontsi
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
 subgraph cluster_lab { label = "The colors of the list pointed by x should be the \nsame as the input list";
-ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
-"x" [shape=plaintext, style=bold, fontsize=16];
-"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
-"x"->"0";
-"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
-"1"->"1" [label="n", style=dotted];
-"0"->"1" [label="n", style=dotted];
-"1"->"1" [label="t[n]", style=dotted];
-"0"->"1" [label="t[n]"];
-"0"->"0" [label="t[n]"];
-}
-}
-
-// Page number 17
-digraph structure {
-size="7.5,10";center=true;fonstsize=6;
-subgraph cluster_lab { label = "The colors of the list pointed by x should be the \nsame as the input list";
-ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
-"x" [shape=plaintext, style=bold, fontsize=16];
-"x"->"1";
-"1" [label="1\naltlist[n]\nlast_elem\nr[n,x]"];
-"1"->"1" [label="t[n]"];
-}
-}
-
-// Page number 18
-digraph structure {
-size="7.5,10";center=true;fonstsize=6;
-subgraph cluster_lab { label = "The colors of the list pointed by x should be the \nsame as the input list";
 nullary [shape=plaintext, label=<
 <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
 <TR><TD COLSPAN="1">nullary</TD></TR>
 <TR><TD>last_color=1/2</TD></TR>
 </TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
-"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\nr[n,x]"];
+"0" [label="0\naltlist[n]\nr[n,x]\nsame_order[n,old_n]"];
 "2"->"2" [label="n", style=dotted];
 "2"->"1" [label="n", style=dotted, dir=both];
 "1"->"1" [label="n", style=dotted];
 "0"->"2" [label="n", style=dotted];
 "0"->"1" [label="n", style=dotted];
+"2"->"2" [label="old_n", style=dotted];
+"2"->"1" [label="old_n", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"2" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
 "2"->"2" [label="t[n]", style=dotted];
 "2"->"1" [label="t[n]", style=dotted, dir=both];
 "1"->"1" [label="t[n]", style=dotted];
@@ -254,17 +251,65 @@ nullary [shape=plaintext, label=<
 }
 }
 
-// Page number 19
+// Page number 17
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+subgraph cluster_lab { label = "The colors of the list pointed by x should be the \nsame as the input list";
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
+"x"->"0";
+"0" [label="0\naltlist[n]\nr[n,x]\nsame_order[n,old_n]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+}
+
+// Page number 18
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
 subgraph cluster_lab { label = "The colors of the list pointed by x should be the \nsame as the input list";
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\nr[n,x]"];
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]\nsame_order[n,old_n]"];
 "1"->"1" [label="n", style=dotted];
 "0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+}
+
+// Page number 19
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+subgraph cluster_lab { label = "The colors of the list pointed by x should be the \nsame as the input list";
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]\nsame_order[n,old_n]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
 "1"->"1" [label="t[n]", style=dotted];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
@@ -275,20 +320,11 @@ ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
 subgraph cluster_lab { label = "The colors of the list pointed by x should be the \nsame as the input list";
-nullary [shape=plaintext, label=<
-<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
-<TR><TD COLSPAN="1">nullary</TD></TR>
-<TR><TD>last_color=1/2</TD></TR>
-</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
-"x"->"0";
-"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
-"1"->"1" [label="n", style=dotted];
-"0"->"1" [label="n", style=dotted];
-"1"->"1" [label="t[n]", style=dotted];
-"0"->"1" [label="t[n]"];
-"0"->"0" [label="t[n]"];
+"x"->"1";
+"1" [label="1\naltlist[n]\nlast_elem\nr[n,x]\nsame_order[n,old_n]"];
+"1"->"1" [label="t[n]"];
 }
 }
 
@@ -296,25 +332,16 @@ nullary [shape=plaintext, label=<
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
 subgraph cluster_lab { label = "The colors of the list pointed by x should be the \nsame as the input list";
-nullary [shape=plaintext, label=<
-<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
-<TR><TD COLSPAN="1">nullary</TD></TR>
-<TR><TD>last_color=1/2</TD></TR>
-</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
-"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
-"2"->"2" [label="n", style=dotted];
-"2"->"1" [label="n", style=dotted, dir=both];
+"0" [label="0\naltlist[n]\nr[n,x]\nsame_order[n,old_n]"];
 "1"->"1" [label="n", style=dotted];
-"0"->"2" [label="n", style=dotted];
 "0"->"1" [label="n", style=dotted];
-"2"->"2" [label="t[n]", style=dotted];
-"2"->"1" [label="t[n]", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
 "1"->"1" [label="t[n]", style=dotted];
-"0"->"2" [label="t[n]"];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
 }
@@ -330,12 +357,24 @@ nullary [shape=plaintext, label=<
 <TR><TD>last_color=1/2</TD></TR>
 </TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\nr[n,x]"];
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]\nsame_order[n,old_n]"];
+"2"->"2" [label="n", style=dotted];
+"2"->"1" [label="n", style=dotted, dir=both];
 "1"->"1" [label="n", style=dotted];
+"0"->"2" [label="n", style=dotted];
 "0"->"1" [label="n", style=dotted];
+"2"->"2" [label="old_n", style=dotted];
+"2"->"1" [label="old_n", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"2" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"2"->"2" [label="t[n]", style=dotted];
+"2"->"1" [label="t[n]", style=dotted, dir=both];
 "1"->"1" [label="t[n]", style=dotted];
+"0"->"2" [label="t[n]"];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
 }
@@ -346,11 +385,13 @@ digraph structure {
 size="7.5,10";center=true;fonstsize=6;
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\nr[n,x]"];
+"0" [label="0\naltlist[n]\nr[n,x]\nsame_order[n,old_n]"];
 "1"->"1" [label="n", style=dotted];
 "0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
 "1"->"1" [label="t[n]", style=dotted];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
@@ -361,11 +402,13 @@ digraph structure {
 size="7.5,10";center=true;fonstsize=6;
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]\nsame_order[n,old_n]"];
 "1"->"1" [label="n", style=dotted];
 "0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
 "1"->"1" [label="t[n]", style=dotted];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
@@ -380,11 +423,13 @@ nullary [shape=plaintext, label=<
 <TR><TD>last_color=1/2</TD></TR>
 </TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\nr[n,x]"];
+"0" [label="0\naltlist[n]\nr[n,x]\nsame_order[n,old_n]"];
 "1"->"1" [label="n", style=dotted];
 "0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
 "1"->"1" [label="t[n]", style=dotted];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
@@ -399,11 +444,13 @@ nullary [shape=plaintext, label=<
 <TR><TD>last_color=1/2</TD></TR>
 </TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]\nsame_order[n,old_n]"];
 "1"->"1" [label="n", style=dotted];
 "0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
 "1"->"1" [label="t[n]", style=dotted];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
@@ -418,15 +465,20 @@ nullary [shape=plaintext, label=<
 <TR><TD>last_color=1/2</TD></TR>
 </TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
-"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\nr[n,x]"];
+"0" [label="0\naltlist[n]\nr[n,x]\nsame_order[n,old_n]"];
 "2"->"2" [label="n", style=dotted];
 "2"->"1" [label="n", style=dotted, dir=both];
 "1"->"1" [label="n", style=dotted];
 "0"->"2" [label="n", style=dotted];
 "0"->"1" [label="n", style=dotted];
+"2"->"2" [label="old_n", style=dotted];
+"2"->"1" [label="old_n", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"2" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
 "2"->"2" [label="t[n]", style=dotted];
 "2"->"1" [label="t[n]", style=dotted, dir=both];
 "1"->"1" [label="t[n]", style=dotted];
@@ -444,15 +496,20 @@ nullary [shape=plaintext, label=<
 <TR><TD>last_color=1/2</TD></TR>
 </TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
-"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]\nsame_order[n,old_n]"];
 "2"->"2" [label="n", style=dotted];
 "2"->"1" [label="n", style=dotted, dir=both];
 "1"->"1" [label="n", style=dotted];
 "0"->"2" [label="n", style=dotted];
 "0"->"1" [label="n", style=dotted];
+"2"->"2" [label="old_n", style=dotted];
+"2"->"1" [label="old_n", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"2" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
 "2"->"2" [label="t[n]", style=dotted];
 "2"->"1" [label="t[n]", style=dotted, dir=both];
 "1"->"1" [label="t[n]", style=dotted];
@@ -467,7 +524,7 @@ size="7.5,10";center=true;fonstsize=6;
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
 "x"->"1";
-"1" [label="1\naltlist[n]\nlast_elem\nr[n,x]"];
+"1" [label="1\naltlist[n]\nlast_elem\nr[n,x]\nsame_order[n,old_n]"];
 "1"->"1" [label="t[n]"];
 }
 
@@ -481,7 +538,7 @@ nullary [shape=plaintext, label=<
 </TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
 "x"->"1";
-"1" [label="1\naltlist[n]\ncolor\nlast_elem\nold_color\nr[n,x]"];
+"1" [label="1\naltlist[n]\ncolor\nlast_elem\nold_color\nr[n,x]\nsame_order[n,old_n]"];
 "1"->"1" [label="t[n]"];
 }
 
@@ -493,11 +550,13 @@ digraph structure {
 size="7.5,10";center=true;fonstsize=6;
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\nr[n,x]"];
+"0" [label="0\naltlist[n]\nr[n,x]\nsame_order[n,old_n]"];
 "1"->"1" [label="n", style=dotted];
 "0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
 "1"->"1" [label="t[n]", style=dotted];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
@@ -508,11 +567,13 @@ digraph structure {
 size="7.5,10";center=true;fonstsize=6;
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]\nsame_order[n,old_n]"];
 "1"->"1" [label="n", style=dotted];
 "0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
 "1"->"1" [label="t[n]", style=dotted];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
@@ -527,11 +588,13 @@ nullary [shape=plaintext, label=<
 <TR><TD>last_color=1/2</TD></TR>
 </TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\nr[n,x]"];
+"0" [label="0\naltlist[n]\nr[n,x]\nsame_order[n,old_n]"];
 "1"->"1" [label="n", style=dotted];
 "0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
 "1"->"1" [label="t[n]", style=dotted];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
@@ -546,11 +609,13 @@ nullary [shape=plaintext, label=<
 <TR><TD>last_color=1/2</TD></TR>
 </TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]\nsame_order[n,old_n]"];
 "1"->"1" [label="n", style=dotted];
 "0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
 "1"->"1" [label="t[n]", style=dotted];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
@@ -565,15 +630,20 @@ nullary [shape=plaintext, label=<
 <TR><TD>last_color=1/2</TD></TR>
 </TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
-"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\nr[n,x]"];
+"0" [label="0\naltlist[n]\nr[n,x]\nsame_order[n,old_n]"];
 "2"->"2" [label="n", style=dotted];
 "2"->"1" [label="n", style=dotted, dir=both];
 "1"->"1" [label="n", style=dotted];
 "0"->"2" [label="n", style=dotted];
 "0"->"1" [label="n", style=dotted];
+"2"->"2" [label="old_n", style=dotted];
+"2"->"1" [label="old_n", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"2" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
 "2"->"2" [label="t[n]", style=dotted];
 "2"->"1" [label="t[n]", style=dotted, dir=both];
 "1"->"1" [label="t[n]", style=dotted];
@@ -591,15 +661,20 @@ nullary [shape=plaintext, label=<
 <TR><TD>last_color=1/2</TD></TR>
 </TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
-"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nsame_order[n,old_n]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]\nsame_order[n,old_n]"];
 "2"->"2" [label="n", style=dotted];
 "2"->"1" [label="n", style=dotted, dir=both];
 "1"->"1" [label="n", style=dotted];
 "0"->"2" [label="n", style=dotted];
 "0"->"1" [label="n", style=dotted];
+"2"->"2" [label="old_n", style=dotted];
+"2"->"1" [label="old_n", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"2" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
 "2"->"2" [label="t[n]", style=dotted];
 "2"->"1" [label="t[n]", style=dotted, dir=both];
 "1"->"1" [label="t[n]", style=dotted];
@@ -614,7 +689,7 @@ size="7.5,10";center=true;fonstsize=6;
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
 "x"->"1";
-"1" [label="1\naltlist[n]\nlast_elem\nr[n,x]"];
+"1" [label="1\naltlist[n]\nlast_elem\nr[n,x]\nsame_order[n,old_n]"];
 "1"->"1" [label="t[n]"];
 }
 

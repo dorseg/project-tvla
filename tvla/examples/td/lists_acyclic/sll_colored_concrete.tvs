@@ -8,4 +8,6 @@
        color = {mid}
        altlist[n] = {head, mid, tail}
        last_elem = {tail}
+       old_n = {head->mid, mid->tail}
+       same_order[n,old_n] = {head, mid, tail}
 }

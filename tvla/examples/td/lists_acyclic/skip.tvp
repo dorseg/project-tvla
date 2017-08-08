@@ -19,5 +19,6 @@ L1 skip() 			 exit
 
 exit Assert_ListInvariants(x)     error
 exit Assert_No_Leak(x)            error
+exit Assert_Same_Order(x)         error
 exit Assert_Alternating_Colors(x) error
 exit Assert_Flipped(x)		  	  error

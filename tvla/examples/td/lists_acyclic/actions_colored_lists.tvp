@@ -201,8 +201,8 @@
 // assert that the order of the list is the same as the original order
 %action Assert_Same_Order(lhs) {
   %t "Assert_Same_Order(" + lhs + ")"
-  %p !A(v) same_order[n,old_n](v)
-  %message (!A(v) same_order[n,old_n](v)) -> 
+  %p !A(v) r[n,lhs](v) -> same_order[n,old_n](v)
+  %message (!A(v) r[n,lhs](v) -> same_order[n,old_n](v)) -> 
            "The order of the list point by " + lhs + " should be the same as the input list"
 }
 
