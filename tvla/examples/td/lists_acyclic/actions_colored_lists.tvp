@@ -185,21 +185,10 @@
   }
 }
 
-// taking a snapshot of the inital color of each element in the list
-%action Set_Old_Colors() {
-  %t "Set_Old_Colors()"
-  %f { color(v) }
+%action Set_Old_n() {
+  %t "Set_Old_n()"
   {
-    old_color(v) = color(v)
-  }
-}
-
-// taking a snapshot of the inital reachability of lhs (pointer to the head of the list)
-%action Set_Old_r(lhs) {
-  %t "Set_Old_r(" + lhs + ")"
-  %f { lhs(v) }
-  {
-    old_r[n,lhs](v) = r[n,lhs](v)
+    old_n(v) = E(w) n(v,w)
   }
 }
 
@@ -216,12 +205,11 @@
 
 ////////////// Actions for testing various properties
 
-// assert that the order of the list is the same as the original order (has the same reachability)
+// assert that the order of the list is the same as the original order
 %action Assert_Same_Order(lhs) {
   %t "Assert_Same_Order(" + lhs + ")"
-  %f { lhs(v) }
-  %p !A(v) (r[n,lhs](v) <-> old_r[n,lhs](v))
-  %message (!A(v) (r[n,lhs](v) <-> old_r[n,lhs](v))) -> 
+  %p !A(v_1,v_2) (n(v_1,v_2) <-> old_n(v_1,v_2))
+  %message (!A(v_1,v_2) (n(v_1,v_2) <-> old_n(v_1,v_2))) -> 
            "The order of the list point by " + lhs + " should be the same as the input list"
 }
 

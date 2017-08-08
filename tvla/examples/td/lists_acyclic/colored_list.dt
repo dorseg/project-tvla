@@ -39,7 +39,7 @@ colored_list->"L0_0";
 "exit"->"error"[label="Assert_Same_Order(x)"];
 "exit"->"error"[label="Assert_Alternating_Colors(x)"];
 "exit"->"error"[label="Assert_Flipped(x)"];
-"L0_1"->"L1"[label="Set_Old_r(x)"];
+"L0_1"->"L1"[label="Set_Old_n()"];
 "L0_0"->"L0_1"[label="Set_Old_Colors()"];
 }
 
@@ -51,107 +51,144 @@ digraph structure {
 size="7.5,10";center=true;fonstsize=6;
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"2" [label="2\naltlist[n]\nlast_elem\nr[n,x]"];
-"1" [label="1\naltlist[n]\ncolor\nr[n,x]"];
+"1" [label="1\naltlist[n]\nr[n,x]\ncolor=1/2\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\nr[n,x]"];
-"1"->"2" [label="n"];
-"0"->"1" [label="n"];
-"2"->"2" [label="t[n]"];
-"1"->"2" [label="t[n]"];
-"1"->"1" [label="t[n]"];
-"0"->"2" [label="t[n]"];
+"0" [label="0\naltlist[n]\nr[n,x]\ncolor=1/2"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
 }
 
 // Page number 4
-digraph msg {size = "7.5,10";center=true;"Program Location\nL0_1" [shape=box, fontsize=80]; }
-
-// Page number 5
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"2" [label="2\naltlist[n]\nlast_elem\nr[n,x]"];
-"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"x"->"1";
+"1" [label="1\naltlist[n]\nlast_elem\nr[n,x]\ncolor=1/2"];
+"1"->"1" [label="t[n]"];
+}
+
+// Page number 5
+digraph msg {size = "7.5,10";center=true;"Program Location\nL0_1" [shape=box, fontsize=80]; }
+
+// Page number 6
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
 "0" [label="0\naltlist[n]\nr[n,x]"];
-"1"->"2" [label="n"];
-"0"->"1" [label="n"];
-"2"->"2" [label="t[n]"];
-"1"->"2" [label="t[n]"];
-"1"->"1" [label="t[n]"];
-"0"->"2" [label="t[n]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
 }
-
-// Page number 6
-digraph msg {size = "7.5,10";center=true;"Program Location\nL1" [shape=box, fontsize=80]; }
 
 // Page number 7
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"2" [label="2\naltlist[n]\nlast_elem\nold_r[n,x]\nr[n,x]"];
-"1" [label="1\naltlist[n]\ncolor\nold_color\nold_r[n,x]\nr[n,x]"];
+"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\nold_r[n,x]\nr[n,x]"];
-"1"->"2" [label="n"];
-"0"->"1" [label="n"];
-"2"->"2" [label="t[n]"];
-"1"->"2" [label="t[n]"];
-"1"->"1" [label="t[n]"];
-"0"->"2" [label="t[n]"];
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
 }
 
 // Page number 8
-digraph msg {size = "7.5,10";center=true;"Program Location\nL2" [shape=box, fontsize=80]; }
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"x"->"0";
+"0" [label="0\naltlist[n]\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
 
 // Page number 9
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
-ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
-"e" [shape=plaintext, style=bold, fontsize=16];
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"2" [label="2\naltlist[n]\nlast_elem\nold_r[n,x]\nr[n,e]\nr[n,x]"];
-"1" [label="1\naltlist[n]\ncolor\nold_color\nold_r[n,x]\nr[n,e]\nr[n,x]"];
-"e"->"0";
+"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\nold_r[n,x]\nr[n,e]\nr[n,x]"];
-"1"->"2" [label="n"];
-"0"->"1" [label="n"];
-"2"->"2" [label="t[n]"];
-"1"->"2" [label="t[n]"];
-"1"->"1" [label="t[n]"];
-"0"->"2" [label="t[n]"];
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
 }
 
 // Page number 10
-digraph msg {size = "7.5,10";center=true;"Program Location\nL3" [shape=box, fontsize=80]; }
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"x"->"0";
+"0" [label="0\naltlist[n]\nr[n,x]"];
+"2"->"2" [label="n", style=dotted];
+"2"->"1" [label="n", style=dotted, dir=both];
+"1"->"1" [label="n", style=dotted];
+"0"->"2" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"2"->"2" [label="t[n]", style=dotted];
+"2"->"1" [label="t[n]", style=dotted, dir=both];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"2" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
 
 // Page number 11
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
-ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
-"e" [shape=plaintext, style=bold, fontsize=16];
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"2" [label="2\naltlist[n]\nlast_elem\nold_r[n,x]\nr[n,e]\nr[n,x]"];
-"1" [label="1\naltlist[n]\ncolor\nold_color\nold_r[n,x]\nr[n,e]\nr[n,x]"];
-"e"->"0";
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\nold_r[n,x]\nr[n,e]\nr[n,x]"];
-"1"->"2" [label="n"];
-"0"->"1" [label="n"];
-"2"->"2" [label="t[n]"];
-"1"->"2" [label="t[n]"];
-"1"->"1" [label="t[n]"];
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"2"->"2" [label="n", style=dotted];
+"2"->"1" [label="n", style=dotted, dir=both];
+"1"->"1" [label="n", style=dotted];
+"0"->"2" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"2"->"2" [label="t[n]", style=dotted];
+"2"->"1" [label="t[n]", style=dotted, dir=both];
+"1"->"1" [label="t[n]", style=dotted];
 "0"->"2" [label="t[n]"];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
@@ -161,113 +198,101 @@ ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
-"p" [shape=plaintext, style=bold, fontsize=16];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"p"->"2";
-"2" [label="2\naltlist[n]\nlast_elem\nold_r[n,x]\nr[n,p]\nr[n,x]"];
-"1" [label="1\naltlist[n]\ncolor\nold_color\nold_r[n,x]\nr[n,x]"];
-"x"->"0";
-"0" [label="0\naltlist[n]\nold_r[n,x]\nr[n,x]"];
-"1"->"2" [label="n"];
-"0"->"1" [label="n"];
-"2"->"2" [label="t[n]"];
-"1"->"2" [label="t[n]"];
+"x"->"1";
+"1" [label="1\naltlist[n]\nlast_elem\nr[n,x]"];
 "1"->"1" [label="t[n]"];
-"0"->"2" [label="t[n]"];
-"0"->"1" [label="t[n]"];
-"0"->"0" [label="t[n]"];
 }
 
 // Page number 13
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
-ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
-"e" [shape=plaintext, style=bold, fontsize=16];
-"p" [shape=plaintext, style=bold, fontsize=16];
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"2" [label="2\naltlist[n]\nlast_elem\nold_r[n,x]\nr[n,e]\nr[n,p]\nr[n,x]"];
-"e"->"1";
-"1" [label="1\naltlist[n]\ncolor\nold_color\nold_r[n,x]\nr[n,e]\nr[n,p]\nr[n,x]"];
-"p"->"0";
-"x"->"0";
-"0" [label="0\naltlist[n]\nold_r[n,x]\nr[n,p]\nr[n,x]"];
-"1"->"2" [label="n"];
-"0"->"1" [label="n"];
-"2"->"2" [label="t[n]"];
-"1"->"2" [label="t[n]"];
+"x"->"1";
+"1" [label="1\naltlist[n]\ncolor\nlast_elem\nold_color\nr[n,x]"];
 "1"->"1" [label="t[n]"];
-"0"->"2" [label="t[n]"];
-"0"->"1" [label="t[n]"];
-"0"->"0" [label="t[n]"];
 }
 
 // Page number 14
+digraph msg {size = "7.5,10";center=true;"Program Location\nL1" [shape=box, fontsize=80]; }
+
+// Page number 15
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
-"e" [shape=plaintext, style=bold, fontsize=16];
-"p" [shape=plaintext, style=bold, fontsize=16];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"e"->"2";
-"2" [label="2\naltlist[n]\nlast_elem\nold_r[n,x]\nr[n,e]\nr[n,p]\nr[n,x]"];
-"p"->"1";
-"1" [label="1\naltlist[n]\ncolor\nold_color\nold_r[n,x]\nr[n,p]\nr[n,x]"];
+"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\nold_r[n,x]\nr[n,x]"];
-"1"->"2" [label="n"];
-"0"->"1" [label="n"];
-"2"->"2" [label="t[n]"];
-"1"->"2" [label="t[n]"];
-"1"->"1" [label="t[n]"];
-"0"->"2" [label="t[n]"];
+"0" [label="0\naltlist[n]\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
 }
-
-// Page number 15
-digraph msg {size = "7.5,10";center=true;"Program Location\nL6" [shape=box, fontsize=80]; }
 
 // Page number 16
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
-"p" [shape=plaintext, style=bold, fontsize=16];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"p"->"2";
-"2" [label="2\naltlist[n]\nlast_elem\nold_r[n,x]\nr[n,p]\nr[n,x]"];
-"1" [label="1\naltlist[n]\ncolor\nold_color\nold_r[n,x]\nr[n,x]"];
+"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\nold_r[n,x]\nr[n,x]"];
-"1"->"2" [label="n"];
-"0"->"1" [label="n"];
-"2"->"2" [label="t[n]"];
-"1"->"2" [label="t[n]"];
-"1"->"1" [label="t[n]"];
-"0"->"2" [label="t[n]"];
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
 }
 
 // Page number 17
-digraph msg {size = "7.5,10";center=true;"Program Location\nL4" [shape=box, fontsize=80]; }
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"x"->"0";
+"0" [label="0\naltlist[n]\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
 
 // Page number 18
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
-ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
-"e" [shape=plaintext, style=bold, fontsize=16];
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"2" [label="2\naltlist[n]\nlast_elem\nold_r[n,x]\nr[n,e]\nr[n,x]"];
-"1" [label="1\naltlist[n]\ncolor\nold_color\nold_r[n,x]\nr[n,e]\nr[n,x]"];
-"e"->"0";
+"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\nold_r[n,x]\nr[n,e]\nr[n,x]"];
-"1"->"2" [label="n"];
-"0"->"1" [label="n"];
-"2"->"2" [label="t[n]"];
-"1"->"2" [label="t[n]"];
-"1"->"1" [label="t[n]"];
-"0"->"2" [label="t[n]"];
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
 }
@@ -275,21 +300,29 @@ ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 // Page number 19
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
-ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
-"e" [shape=plaintext, style=bold, fontsize=16];
-"p" [shape=plaintext, style=bold, fontsize=16];
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"2" [label="2\naltlist[n]\nlast_elem\nold_r[n,x]\nr[n,e]\nr[n,p]\nr[n,x]"];
-"e"->"1";
-"1" [label="1\naltlist[n]\ncolor\nold_color\nold_r[n,x]\nr[n,e]\nr[n,p]\nr[n,x]"];
-"p"->"0";
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\nold_r[n,x]\nr[n,p]\nr[n,x]"];
-"1"->"2" [label="n"];
-"0"->"1" [label="n"];
-"2"->"2" [label="t[n]"];
-"1"->"2" [label="t[n]"];
-"1"->"1" [label="t[n]"];
+"0" [label="0\naltlist[n]\nr[n,x]"];
+"2"->"2" [label="n", style=dotted];
+"2"->"1" [label="n", style=dotted, dir=both];
+"1"->"1" [label="n", style=dotted];
+"0"->"2" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"2"->"2" [label="old_n", style=dotted];
+"2"->"1" [label="old_n", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"2" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"2"->"2" [label="t[n]", style=dotted];
+"2"->"1" [label="t[n]", style=dotted, dir=both];
+"1"->"1" [label="t[n]", style=dotted];
 "0"->"2" [label="t[n]"];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
@@ -298,215 +331,257 @@ ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 // Page number 20
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
-ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
-"e" [shape=plaintext, style=bold, fontsize=16];
-"p" [shape=plaintext, style=bold, fontsize=16];
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"e"->"2";
-"2" [label="2\naltlist[n]\nlast_elem\nold_r[n,x]\nr[n,e]\nr[n,p]\nr[n,x]"];
-"p"->"1";
-"1" [label="1\naltlist[n]\ncolor\nold_color\nold_r[n,x]\nr[n,p]\nr[n,x]"];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,x]\nlast_elem=1/2", peripheries=2];
 "x"->"0";
-"0" [label="0\naltlist[n]\nold_r[n,x]\nr[n,x]"];
-"1"->"2" [label="n"];
-"0"->"1" [label="n"];
-"2"->"2" [label="t[n]"];
-"1"->"2" [label="t[n]"];
-"1"->"1" [label="t[n]"];
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,x]"];
+"2"->"2" [label="n", style=dotted];
+"2"->"1" [label="n", style=dotted, dir=both];
+"1"->"1" [label="n", style=dotted];
+"0"->"2" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"2"->"2" [label="old_n", style=dotted];
+"2"->"1" [label="old_n", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"2" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"2"->"2" [label="t[n]", style=dotted];
+"2"->"1" [label="t[n]", style=dotted, dir=both];
+"1"->"1" [label="t[n]", style=dotted];
 "0"->"2" [label="t[n]"];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
 }
 
 // Page number 21
-digraph msg {size = "7.5,10";center=true;"Program Location\nL5" [shape=box, fontsize=80]; }
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"x"->"1";
+"1" [label="1\naltlist[n]\nlast_elem\nr[n,x]"];
+"1"->"1" [label="t[n]"];
+}
 
 // Page number 22
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
-ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
-"e" [shape=plaintext, style=bold, fontsize=16];
-"p" [shape=plaintext, style=bold, fontsize=16];
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"2" [label="2\naltlist[n]\nlast_elem\nold_r[n,x]\nr[n,e]\nr[n,p]\nr[n,x]"];
-"e"->"1";
-"p"->"1";
-"1" [label="1\naltlist[n]\ncolor\nold_color\nold_r[n,x]\nr[n,e]\nr[n,p]\nr[n,x]"];
-"x"->"0";
-"0" [label="0\naltlist[n]\nold_r[n,x]\nr[n,x]"];
-"1"->"2" [label="n"];
-"0"->"1" [label="n"];
-"2"->"2" [label="t[n]"];
-"1"->"2" [label="t[n]"];
+"x"->"1";
+"1" [label="1\naltlist[n]\ncolor\nlast_elem\nold_color\nr[n,x]"];
 "1"->"1" [label="t[n]"];
-"0"->"2" [label="t[n]"];
-"0"->"1" [label="t[n]"];
-"0"->"0" [label="t[n]"];
 }
 
 // Page number 23
-digraph structure {
-size="7.5,10";center=true;fonstsize=6;
-ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
-"e" [shape=plaintext, style=bold, fontsize=16];
-"p" [shape=plaintext, style=bold, fontsize=16];
-"x" [shape=plaintext, style=bold, fontsize=16];
-"e"->"2";
-"p"->"2";
-"2" [label="2\naltlist[n]\nlast_elem\nold_r[n,x]\nr[n,e]\nr[n,p]\nr[n,x]"];
-"1" [label="1\naltlist[n]\ncolor\nold_color\nold_r[n,x]\nr[n,x]"];
-"x"->"0";
-"0" [label="0\naltlist[n]\nold_r[n,x]\nr[n,x]"];
-"1"->"2" [label="n"];
-"0"->"1" [label="n"];
-"2"->"2" [label="t[n]"];
-"1"->"2" [label="t[n]"];
-"1"->"1" [label="t[n]"];
-"0"->"2" [label="t[n]"];
-"0"->"1" [label="t[n]"];
-"0"->"0" [label="t[n]"];
-}
+digraph msg {size = "7.5,10";center=true;"Program Location\nL2" [shape=box, fontsize=80]; }
 
 // Page number 24
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "e" [shape=plaintext, style=bold, fontsize=16];
-"p" [shape=plaintext, style=bold, fontsize=16];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"2" [label="2\naltlist[n]\nlast_elem\nold_r[n,x]\nr[n,e]\nr[n,p]\nr[n,x]"];
-"1" [label="1\naltlist[n]\ncolor\nold_color\nold_r[n,x]\nr[n,e]\nr[n,p]\nr[n,x]"];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,x]\nlast_elem=1/2", peripheries=2];
 "e"->"0";
-"p"->"0";
 "x"->"0";
-"0" [label="0\naltlist[n]\nold_r[n,x]\nr[n,e]\nr[n,p]\nr[n,x]"];
-"1"->"2" [label="n"];
-"0"->"1" [label="n"];
-"2"->"2" [label="t[n]"];
-"1"->"2" [label="t[n]"];
-"1"->"1" [label="t[n]"];
-"0"->"2" [label="t[n]"];
+"0" [label="0\naltlist[n]\nr[n,e]\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
 }
 
 // Page number 25
-digraph msg {size = "7.5,10";center=true;"Program Location\nL7" [shape=box, fontsize=80]; }
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"e"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
 
 // Page number 26
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
-ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
-"p" [shape=plaintext, style=bold, fontsize=16];
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"p"->"2";
-"2" [label="2\naltlist[n]\nlast_elem\nold_r[n,x]\nr[n,p]\nr[n,x]"];
-"1" [label="1\naltlist[n]\ncolor\nold_color\nold_r[n,x]\nr[n,x]"];
+"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"e"->"0";
 "x"->"0";
-"0" [label="0\naltlist[n]\nold_r[n,x]\nr[n,x]"];
-"1"->"2" [label="n"];
-"0"->"1" [label="n"];
-"2"->"2" [label="t[n]"];
-"1"->"2" [label="t[n]"];
-"1"->"1" [label="t[n]"];
-"0"->"2" [label="t[n]"];
+"0" [label="0\naltlist[n]\nr[n,e]\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
 }
 
 // Page number 27
-digraph msg {size = "7.5,10";center=true;"Program Location\nexit" [shape=box, fontsize=80]; }
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"e"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
 
 // Page number 28
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
-ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
-"p" [shape=plaintext, style=bold, fontsize=16];
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"p"->"2";
-"2" [label="2\naltlist[n]\ncolor\nlast_elem\nold_r[n,x]\nr[n,p]\nr[n,x]"];
-"1" [label="1\naltlist[n]\nold_color\nold_r[n,x]\nr[n,x]"];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"e"->"0";
 "x"->"0";
-"0" [label="0\naltlist[n]\ncolor\nold_r[n,x]\nr[n,x]"];
-"1"->"2" [label="n"];
-"0"->"1" [label="n"];
-"2"->"2" [label="t[n]"];
-"1"->"2" [label="t[n]"];
-"1"->"1" [label="t[n]"];
+"0" [label="0\naltlist[n]\nr[n,e]\nr[n,x]"];
+"2"->"2" [label="n", style=dotted];
+"2"->"1" [label="n", style=dotted, dir=both];
+"1"->"1" [label="n", style=dotted];
+"0"->"2" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"2"->"2" [label="old_n", style=dotted];
+"2"->"1" [label="old_n", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"2" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"2"->"2" [label="t[n]", style=dotted];
+"2"->"1" [label="t[n]", style=dotted, dir=both];
+"1"->"1" [label="t[n]", style=dotted];
 "0"->"2" [label="t[n]"];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
 }
 
 // Page number 29
-digraph msg {size = "7.5,10";center=true;"Program Location\nL8" [shape=box, fontsize=80]; }
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"e"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,x]"];
+"2"->"2" [label="n", style=dotted];
+"2"->"1" [label="n", style=dotted, dir=both];
+"1"->"1" [label="n", style=dotted];
+"0"->"2" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"2"->"2" [label="old_n", style=dotted];
+"2"->"1" [label="old_n", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"2" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"2"->"2" [label="t[n]", style=dotted];
+"2"->"1" [label="t[n]", style=dotted, dir=both];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"2" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
 
 // Page number 30
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
-"p" [shape=plaintext, style=bold, fontsize=16];
+"e" [shape=plaintext, style=bold, fontsize=16];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"p"->"2";
-"2" [label="2\naltlist[n]\nlast_elem\nold_r[n,x]\nr[n,p]\nr[n,x]"];
-"1" [label="1\naltlist[n]\ncolor\nold_color\nold_r[n,x]\nr[n,x]"];
-"x"->"0";
-"0" [label="0\naltlist[n]\nold_r[n,x]\nr[n,x]"];
-"1"->"2" [label="n"];
-"0"->"1" [label="n"];
-"2"->"2" [label="t[n]"];
-"1"->"2" [label="t[n]"];
+"e"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\nlast_elem\nr[n,e]\nr[n,x]"];
 "1"->"1" [label="t[n]"];
-"0"->"2" [label="t[n]"];
-"0"->"1" [label="t[n]"];
-"0"->"0" [label="t[n]"];
 }
 
 // Page number 31
-digraph msg {size = "7.5,10";center=true;"Program Location\nL9" [shape=box, fontsize=80]; }
-
-// Page number 32
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
-ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "e" [shape=plaintext, style=bold, fontsize=16];
-"p" [shape=plaintext, style=bold, fontsize=16];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"e"->"2";
-"p"->"2";
-"2" [label="2\naltlist[n]\nlast_elem\nold_r[n,x]\nr[n,e]\nr[n,p]\nr[n,x]"];
-"1" [label="1\nold_color\nold_r[n,x]\nr[n,x]"];
-"x"->"0";
-"0" [label="0\naltlist[n]\ncolor\nold_r[n,x]\nr[n,x]"];
-"1"->"2" [label="n"];
-"0"->"1" [label="n"];
-"2"->"2" [label="t[n]"];
-"1"->"2" [label="t[n]"];
+"e"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\ncolor\nlast_elem\nold_color\nr[n,e]\nr[n,x]"];
 "1"->"1" [label="t[n]"];
-"0"->"2" [label="t[n]"];
-"0"->"1" [label="t[n]"];
-"0"->"0" [label="t[n]"];
 }
+
+// Page number 32
+digraph msg {size = "7.5,10";center=true;"Program Location\nL3" [shape=box, fontsize=80]; }
 
 // Page number 33
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "e" [shape=plaintext, style=bold, fontsize=16];
-"p" [shape=plaintext, style=bold, fontsize=16];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"p"->"2";
-"2" [label="2\naltlist[n]\nlast_elem\nold_r[n,x]\nr[n,e]\nr[n,p]\nr[n,x]"];
-"1" [label="1\naltlist[n]\ncolor\nold_color\nold_r[n,x]\nr[n,e]\nr[n,x]"];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,x]\nlast_elem=1/2", peripheries=2];
 "e"->"0";
 "x"->"0";
-"0" [label="0\naltlist[n]\nold_r[n,x]\nr[n,e]\nr[n,x]"];
-"1"->"2" [label="n"];
-"0"->"1" [label="n"];
-"2"->"2" [label="t[n]"];
-"1"->"2" [label="t[n]"];
-"1"->"1" [label="t[n]"];
-"0"->"2" [label="t[n]"];
+"0" [label="0\naltlist[n]\nr[n,e]\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
 }
@@ -515,19 +590,17 @@ ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
-"p" [shape=plaintext, style=bold, fontsize=16];
+"e" [shape=plaintext, style=bold, fontsize=16];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"p"->"2";
-"2" [label="2\naltlist[n]\ncolor\nlast_elem\nold_r[n,x]\nr[n,p]\nr[n,x]"];
-"1" [label="1\naltlist[n]\nold_color\nold_r[n,x]\nr[n,x]"];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"e"->"0";
 "x"->"0";
-"0" [label="0\naltlist[n]\ncolor\nold_r[n,x]\nr[n,x]"];
-"1"->"2" [label="n"];
-"0"->"1" [label="n"];
-"2"->"2" [label="t[n]"];
-"1"->"2" [label="t[n]"];
-"1"->"1" [label="t[n]"];
-"0"->"2" [label="t[n]"];
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
 }
@@ -535,47 +608,77 @@ ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 // Page number 35
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
-ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "e" [shape=plaintext, style=bold, fontsize=16];
-"p" [shape=plaintext, style=bold, fontsize=16];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"p"->"2";
-"2" [label="2\naltlist[n]\nlast_elem\nold_r[n,x]\nr[n,e]\nr[n,p]\nr[n,x]"];
-"e"->"1";
-"1" [label="1\naltlist[n]\ncolor\nold_color\nold_r[n,x]\nr[n,e]\nr[n,x]"];
+"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"e"->"0";
 "x"->"0";
-"0" [label="0\ncolor\nold_r[n,x]\nr[n,x]"];
-"1"->"2" [label="n"];
-"0"->"1" [label="n"];
-"2"->"2" [label="t[n]"];
-"1"->"2" [label="t[n]"];
-"1"->"1" [label="t[n]"];
-"0"->"2" [label="t[n]"];
+"0" [label="0\naltlist[n]\nr[n,e]\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
 }
 
 // Page number 36
-digraph msg {size = "7.5,10";center=true;"Program Location\nL10" [shape=box, fontsize=80]; }
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"e"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
 
 // Page number 37
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
-ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "e" [shape=plaintext, style=bold, fontsize=16];
-"p" [shape=plaintext, style=bold, fontsize=16];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"e"->"2";
-"p"->"2";
-"2" [label="2\naltlist[n]\nlast_elem\nold_r[n,x]\nr[n,e]\nr[n,p]\nr[n,x]"];
-"1" [label="1\nold_color\nold_r[n,x]\nr[n,x]"];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"e"->"0";
 "x"->"0";
-"0" [label="0\naltlist[n]\ncolor\nold_r[n,x]\nr[n,x]"];
-"1"->"2" [label="n"];
-"0"->"1" [label="n"];
-"2"->"2" [label="t[n]"];
-"1"->"2" [label="t[n]"];
-"1"->"1" [label="t[n]"];
+"0" [label="0\naltlist[n]\nr[n,e]\nr[n,x]"];
+"2"->"2" [label="n", style=dotted];
+"2"->"1" [label="n", style=dotted, dir=both];
+"1"->"1" [label="n", style=dotted];
+"0"->"2" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"2"->"2" [label="old_n", style=dotted];
+"2"->"1" [label="old_n", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"2" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"2"->"2" [label="t[n]", style=dotted];
+"2"->"1" [label="t[n]", style=dotted, dir=both];
+"1"->"1" [label="t[n]", style=dotted];
 "0"->"2" [label="t[n]"];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
@@ -584,21 +687,31 @@ ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 // Page number 38
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
-ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "e" [shape=plaintext, style=bold, fontsize=16];
-"p" [shape=plaintext, style=bold, fontsize=16];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"p"->"2";
-"2" [label="2\naltlist[n]\nlast_elem\nold_r[n,x]\nr[n,e]\nr[n,p]\nr[n,x]"];
-"1" [label="1\naltlist[n]\ncolor\nold_color\nold_r[n,x]\nr[n,e]\nr[n,x]"];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,x]\nlast_elem=1/2", peripheries=2];
 "e"->"0";
 "x"->"0";
-"0" [label="0\naltlist[n]\nold_r[n,x]\nr[n,e]\nr[n,x]"];
-"1"->"2" [label="n"];
-"0"->"1" [label="n"];
-"2"->"2" [label="t[n]"];
-"1"->"2" [label="t[n]"];
-"1"->"1" [label="t[n]"];
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,x]"];
+"2"->"2" [label="n", style=dotted];
+"2"->"1" [label="n", style=dotted, dir=both];
+"1"->"1" [label="n", style=dotted];
+"0"->"2" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"2"->"2" [label="old_n", style=dotted];
+"2"->"1" [label="old_n", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"2" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"2"->"2" [label="t[n]", style=dotted];
+"2"->"1" [label="t[n]", style=dotted, dir=both];
+"1"->"1" [label="t[n]", style=dotted];
 "0"->"2" [label="t[n]"];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
@@ -609,26 +722,28 @@ digraph structure {
 size="7.5,10";center=true;fonstsize=6;
 ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "e" [shape=plaintext, style=bold, fontsize=16];
-"p" [shape=plaintext, style=bold, fontsize=16];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"p"->"2";
-"2" [label="2\naltlist[n]\nlast_elem\nold_r[n,x]\nr[n,e]\nr[n,p]\nr[n,x]"];
 "e"->"1";
-"1" [label="1\naltlist[n]\ncolor\nold_color\nold_r[n,x]\nr[n,e]\nr[n,x]"];
-"x"->"0";
-"0" [label="0\ncolor\nold_r[n,x]\nr[n,x]"];
-"1"->"2" [label="n"];
-"0"->"1" [label="n"];
-"2"->"2" [label="t[n]"];
-"1"->"2" [label="t[n]"];
+"x"->"1";
+"1" [label="1\naltlist[n]\nlast_elem\nr[n,e]\nr[n,x]"];
 "1"->"1" [label="t[n]"];
-"0"->"2" [label="t[n]"];
-"0"->"1" [label="t[n]"];
-"0"->"0" [label="t[n]"];
 }
 
 // Page number 40
-digraph msg {size = "7.5,10";center=true;"Program Location\nL11" [shape=box, fontsize=80]; }
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\ncolor\nlast_elem\nold_color\nr[n,e]\nr[n,x]"];
+"1"->"1" [label="t[n]"];
+}
 
 // Page number 41
 digraph structure {
@@ -637,18 +752,15 @@ ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "e" [shape=plaintext, style=bold, fontsize=16];
 "p" [shape=plaintext, style=bold, fontsize=16];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"e"->"2";
-"p"->"2";
-"2" [label="2\naltlist[n]\ncolor\nlast_elem\nold_r[n,x]\nr[n,e]\nr[n,p]\nr[n,x]"];
-"1" [label="1\naltlist[n]\nold_color\nold_r[n,x]\nr[n,x]"];
+"e"->"1";
+"1" [label="1\naltlist[n]\nlast_elem\nr[n,e]\nr[n,p]\nr[n,x]"];
+"p"->"0";
 "x"->"0";
-"0" [label="0\naltlist[n]\ncolor\nold_r[n,x]\nr[n,x]"];
-"1"->"2" [label="n"];
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,p]\nr[n,x]"];
 "0"->"1" [label="n"];
-"2"->"2" [label="t[n]"];
-"1"->"2" [label="t[n]"];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
 "1"->"1" [label="t[n]"];
-"0"->"2" [label="t[n]"];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
 }
@@ -660,17 +772,23 @@ ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "e" [shape=plaintext, style=bold, fontsize=16];
 "p" [shape=plaintext, style=bold, fontsize=16];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"p"->"2";
-"2" [label="2\naltlist[n]\nlast_elem\nold_r[n,x]\nr[n,e]\nr[n,p]\nr[n,x]"];
-"e"->"1";
-"1" [label="1\nold_color\nold_r[n,x]\nr[n,e]\nr[n,x]"];
+"e"->"2";
+"2" [label="2\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2"];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"p"->"0";
 "x"->"0";
-"0" [label="0\naltlist[n]\ncolor\nold_r[n,x]\nr[n,x]"];
-"1"->"2" [label="n"];
-"0"->"1" [label="n"];
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,p]\nr[n,x]"];
+"2"->"1" [label="n", style=dotted];
+"1"->"1" [label="n", style=dotted];
+"0"->"2" [label="n"];
+"2"->"2" [label="old_n", style=dotted];
+"2"->"1" [label="old_n", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"2" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
 "2"->"2" [label="t[n]"];
-"1"->"2" [label="t[n]"];
-"1"->"1" [label="t[n]"];
+"2"->"1" [label="t[n]"];
+"1"->"1" [label="t[n]", style=dotted];
 "0"->"2" [label="t[n]"];
 "0"->"1" [label="t[n]"];
 "0"->"0" [label="t[n]"];
@@ -679,19 +797,164 @@ ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 // Page number 43
 digraph structure {
 size="7.5,10";center=true;fonstsize=6;
-ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "e" [shape=plaintext, style=bold, fontsize=16];
 "p" [shape=plaintext, style=bold, fontsize=16];
 "x" [shape=plaintext, style=bold, fontsize=16];
-"p"->"2";
-"2" [label="2\naltlist[n]\nlast_elem\nold_r[n,x]\nr[n,e]\nr[n,p]\nr[n,x]"];
-"1" [label="1\naltlist[n]\ncolor\nold_color\nold_r[n,x]\nr[n,e]\nr[n,x]"];
-"e"->"0";
+"e"->"1";
+"1" [label="1\naltlist[n]\ncolor\nlast_elem\nold_color\nr[n,e]\nr[n,p]\nr[n,x]"];
+"p"->"0";
 "x"->"0";
-"0" [label="0\ncolor\nold_r[n,x]\nr[n,e]\nr[n,x]"];
-"1"->"2" [label="n"];
+"0" [label="0\naltlist[n]\nr[n,p]\nr[n,x]"];
 "0"->"1" [label="n"];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"1"->"1" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 44
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"2";
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2"];
+"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"p"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\nr[n,p]\nr[n,x]"];
+"2"->"1" [label="n", style=dotted];
+"1"->"1" [label="n", style=dotted];
+"0"->"2" [label="n"];
+"2"->"2" [label="old_n", style=dotted];
+"2"->"1" [label="old_n", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"2" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
 "2"->"2" [label="t[n]"];
+"2"->"1" [label="t[n]"];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"2" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 45
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"2";
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2"];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"p"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\nr[n,p]\nr[n,x]"];
+"2"->"1" [label="n", style=dotted];
+"1"->"1" [label="n", style=dotted];
+"0"->"2" [label="n"];
+"2"->"2" [label="old_n", style=dotted];
+"2"->"1" [label="old_n", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"2" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"2"->"2" [label="t[n]"];
+"2"->"1" [label="t[n]"];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"2" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 46
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"3";
+"3" [label="3\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2"];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"p"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\nr[n,p]\nr[n,x]"];
+"3"->"2" [label="n", style=dotted];
+"3"->"1" [label="n", style=dotted];
+"2"->"2" [label="n", style=dotted];
+"2"->"1" [label="n", style=dotted, dir=both];
+"1"->"1" [label="n", style=dotted];
+"0"->"3" [label="n"];
+"3"->"3" [label="old_n", style=dotted];
+"3"->"2" [label="old_n", style=dotted, dir=both];
+"3"->"1" [label="old_n", style=dotted, dir=both];
+"2"->"2" [label="old_n", style=dotted];
+"2"->"1" [label="old_n", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"3" [label="old_n", style=dotted];
+"0"->"2" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"3"->"3" [label="t[n]"];
+"3"->"2" [label="t[n]"];
+"3"->"1" [label="t[n]"];
+"2"->"2" [label="t[n]", style=dotted];
+"2"->"1" [label="t[n]", style=dotted, dir=both];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"3" [label="t[n]"];
+"0"->"2" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 47
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"e"->"1";
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2"];
+"p"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,p]\nr[n,x]"];
+"2"->"2" [label="n", style=dotted];
+"1"->"2" [label="n", style=dotted];
+"0"->"1" [label="n"];
+"2"->"2" [label="old_n", style=dotted];
+"2"->"1" [label="old_n", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"2" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"2"->"2" [label="t[n]", style=dotted];
 "1"->"2" [label="t[n]"];
 "1"->"1" [label="t[n]"];
 "0"->"2" [label="t[n]"];
@@ -699,6 +962,854 @@ ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
 "0"->"0" [label="t[n]"];
 }
 
-// Page number 44
+// Page number 48
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"3";
+"3" [label="3\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2"];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"p"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,p]\nr[n,x]"];
+"3"->"2" [label="n", style=dotted];
+"3"->"1" [label="n", style=dotted];
+"2"->"2" [label="n", style=dotted];
+"2"->"1" [label="n", style=dotted, dir=both];
+"1"->"1" [label="n", style=dotted];
+"0"->"3" [label="n"];
+"3"->"3" [label="old_n", style=dotted];
+"3"->"2" [label="old_n", style=dotted, dir=both];
+"3"->"1" [label="old_n", style=dotted, dir=both];
+"2"->"2" [label="old_n", style=dotted];
+"2"->"1" [label="old_n", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"3" [label="old_n", style=dotted];
+"0"->"2" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"3"->"3" [label="t[n]"];
+"3"->"2" [label="t[n]"];
+"3"->"1" [label="t[n]"];
+"2"->"2" [label="t[n]", style=dotted];
+"2"->"1" [label="t[n]", style=dotted, dir=both];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"3" [label="t[n]"];
+"0"->"2" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 49
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"p"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\nlast_elem\nr[n,p]\nr[n,x]"];
+"1"->"1" [label="t[n]"];
+}
+
+// Page number 50
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"p"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\ncolor\nlast_elem\nold_color\nr[n,p]\nr[n,x]"];
+"1"->"1" [label="t[n]"];
+}
+
+// Page number 51
+digraph msg {size = "7.5,10";center=true;"Program Location\nL6" [shape=box, fontsize=80]; }
+
+// Page number 52
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"p"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\nlast_elem\nr[n,p]\nr[n,x]"];
+"1"->"1" [label="t[n]"];
+}
+
+// Page number 53
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"p"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\ncolor\nlast_elem\nold_color\nr[n,p]\nr[n,x]"];
+"1"->"1" [label="t[n]"];
+}
+
+// Page number 54
+digraph msg {size = "7.5,10";center=true;"Program Location\nL4" [shape=box, fontsize=80]; }
+
+// Page number 55
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"e"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\nr[n,e]\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 56
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"e"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 57
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"e"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\nr[n,e]\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 58
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"e"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 59
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"e"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\nr[n,e]\nr[n,x]"];
+"2"->"2" [label="n", style=dotted];
+"2"->"1" [label="n", style=dotted, dir=both];
+"1"->"1" [label="n", style=dotted];
+"0"->"2" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"2"->"2" [label="old_n", style=dotted];
+"2"->"1" [label="old_n", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"2" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"2"->"2" [label="t[n]", style=dotted];
+"2"->"1" [label="t[n]", style=dotted, dir=both];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"2" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 60
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"e"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,x]"];
+"2"->"2" [label="n", style=dotted];
+"2"->"1" [label="n", style=dotted, dir=both];
+"1"->"1" [label="n", style=dotted];
+"0"->"2" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"2"->"2" [label="old_n", style=dotted];
+"2"->"1" [label="old_n", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"2" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"2"->"2" [label="t[n]", style=dotted];
+"2"->"1" [label="t[n]", style=dotted, dir=both];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"2" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 61
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\nlast_elem\nr[n,e]\nr[n,x]"];
+"1"->"1" [label="t[n]"];
+}
+
+// Page number 62
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\ncolor\nlast_elem\nold_color\nr[n,e]\nr[n,x]"];
+"1"->"1" [label="t[n]"];
+}
+
+// Page number 63
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"1";
+"1" [label="1\naltlist[n]\nlast_elem\nr[n,e]\nr[n,p]\nr[n,x]"];
+"p"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,p]\nr[n,x]"];
+"0"->"1" [label="n"];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"1"->"1" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 64
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"2";
+"2" [label="2\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2"];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"p"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,p]\nr[n,x]"];
+"2"->"1" [label="n", style=dotted];
+"1"->"1" [label="n", style=dotted];
+"0"->"2" [label="n"];
+"2"->"2" [label="old_n", style=dotted];
+"2"->"1" [label="old_n", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"2" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"2"->"2" [label="t[n]"];
+"2"->"1" [label="t[n]"];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"2" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 65
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"1";
+"1" [label="1\naltlist[n]\ncolor\nlast_elem\nold_color\nr[n,e]\nr[n,p]\nr[n,x]"];
+"p"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\nr[n,p]\nr[n,x]"];
+"0"->"1" [label="n"];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"1"->"1" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 66
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"2";
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2"];
+"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"p"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\nr[n,p]\nr[n,x]"];
+"2"->"1" [label="n", style=dotted];
+"1"->"1" [label="n", style=dotted];
+"0"->"2" [label="n"];
+"2"->"2" [label="old_n", style=dotted];
+"2"->"1" [label="old_n", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"2" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"2"->"2" [label="t[n]"];
+"2"->"1" [label="t[n]"];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"2" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 67
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"2";
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2"];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"p"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\nr[n,p]\nr[n,x]"];
+"2"->"1" [label="n", style=dotted];
+"1"->"1" [label="n", style=dotted];
+"0"->"2" [label="n"];
+"2"->"2" [label="old_n", style=dotted];
+"2"->"1" [label="old_n", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"2" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"2"->"2" [label="t[n]"];
+"2"->"1" [label="t[n]"];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"2" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 68
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"3";
+"3" [label="3\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2"];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"p"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\nr[n,p]\nr[n,x]"];
+"3"->"2" [label="n", style=dotted];
+"3"->"1" [label="n", style=dotted];
+"2"->"2" [label="n", style=dotted];
+"2"->"1" [label="n", style=dotted, dir=both];
+"1"->"1" [label="n", style=dotted];
+"0"->"3" [label="n"];
+"3"->"3" [label="old_n", style=dotted];
+"3"->"2" [label="old_n", style=dotted, dir=both];
+"3"->"1" [label="old_n", style=dotted, dir=both];
+"2"->"2" [label="old_n", style=dotted];
+"2"->"1" [label="old_n", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"3" [label="old_n", style=dotted];
+"0"->"2" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"3"->"3" [label="t[n]"];
+"3"->"2" [label="t[n]"];
+"3"->"1" [label="t[n]"];
+"2"->"2" [label="t[n]", style=dotted];
+"2"->"1" [label="t[n]", style=dotted, dir=both];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"3" [label="t[n]"];
+"0"->"2" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 69
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"e"->"1";
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2"];
+"p"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,p]\nr[n,x]"];
+"2"->"2" [label="n", style=dotted];
+"1"->"2" [label="n", style=dotted];
+"0"->"1" [label="n"];
+"2"->"2" [label="old_n", style=dotted];
+"2"->"1" [label="old_n", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"2" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"2"->"2" [label="t[n]", style=dotted];
+"1"->"2" [label="t[n]"];
+"1"->"1" [label="t[n]"];
+"0"->"2" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 70
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"3";
+"3" [label="3\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2"];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"p"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,p]\nr[n,x]"];
+"3"->"2" [label="n", style=dotted];
+"3"->"1" [label="n", style=dotted];
+"2"->"2" [label="n", style=dotted];
+"2"->"1" [label="n", style=dotted, dir=both];
+"1"->"1" [label="n", style=dotted];
+"0"->"3" [label="n"];
+"3"->"3" [label="old_n", style=dotted];
+"3"->"2" [label="old_n", style=dotted, dir=both];
+"3"->"1" [label="old_n", style=dotted, dir=both];
+"2"->"2" [label="old_n", style=dotted];
+"2"->"1" [label="old_n", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"3" [label="old_n", style=dotted];
+"0"->"2" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"3"->"3" [label="t[n]"];
+"3"->"2" [label="t[n]"];
+"3"->"1" [label="t[n]"];
+"2"->"2" [label="t[n]", style=dotted];
+"2"->"1" [label="t[n]", style=dotted, dir=both];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"3" [label="t[n]"];
+"0"->"2" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 71
+digraph msg {size = "7.5,10";center=true;"Program Location\nL5" [shape=box, fontsize=80]; }
+
+// Page number 72
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"e"->"0";
+"p"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 73
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"e"->"0";
+"p"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,p]\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 74
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"e"->"0";
+"p"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 75
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"1" [label="1\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"e"->"0";
+"p"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,p]\nr[n,x]"];
+"1"->"1" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 76
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"e"->"0";
+"p"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]"];
+"2"->"2" [label="n", style=dotted];
+"2"->"1" [label="n", style=dotted, dir=both];
+"1"->"1" [label="n", style=dotted];
+"0"->"2" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"2"->"2" [label="old_n", style=dotted];
+"2"->"1" [label="old_n", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"2" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"2"->"2" [label="t[n]", style=dotted];
+"2"->"1" [label="t[n]", style=dotted, dir=both];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"2" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 77
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color=1/2</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"2" [label="2\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"1" [label="1\naltlist[n]\nr[n,e]\nr[n,p]\nr[n,x]\nlast_elem=1/2", peripheries=2];
+"e"->"0";
+"p"->"0";
+"x"->"0";
+"0" [label="0\naltlist[n]\ncolor\nold_color\nr[n,e]\nr[n,p]\nr[n,x]"];
+"2"->"2" [label="n", style=dotted];
+"2"->"1" [label="n", style=dotted, dir=both];
+"1"->"1" [label="n", style=dotted];
+"0"->"2" [label="n", style=dotted];
+"0"->"1" [label="n", style=dotted];
+"2"->"2" [label="old_n", style=dotted];
+"2"->"1" [label="old_n", style=dotted, dir=both];
+"1"->"1" [label="old_n", style=dotted];
+"0"->"2" [label="old_n", style=dotted];
+"0"->"1" [label="old_n", style=dotted];
+"2"->"2" [label="t[n]", style=dotted];
+"2"->"1" [label="t[n]", style=dotted, dir=both];
+"1"->"1" [label="t[n]", style=dotted];
+"0"->"2" [label="t[n]"];
+"0"->"1" [label="t[n]"];
+"0"->"0" [label="t[n]"];
+}
+
+// Page number 78
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"1";
+"p"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\nlast_elem\nr[n,e]\nr[n,p]\nr[n,x]"];
+"1"->"1" [label="t[n]"];
+}
+
+// Page number 79
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>last_color</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"1";
+"p"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\ncolor\nlast_elem\nold_color\nr[n,e]\nr[n,p]\nr[n,x]"];
+"1"->"1" [label="t[n]"];
+}
+
+// Page number 80
+digraph msg {size = "7.5,10";center=true;"Program Location\nL7" [shape=box, fontsize=80]; }
+
+// Page number 81
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"p"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\nlast_elem\nr[n,p]\nr[n,x]"];
+"1"->"1" [label="t[n]"];
+}
+
+// Page number 82
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>c</TD></TR>
+<TR><TD>last_color</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"p"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\ncolor\nlast_elem\nold_color\nr[n,p]\nr[n,x]"];
+"1"->"1" [label="t[n]"];
+}
+
+// Page number 83
+digraph msg {size = "7.5,10";center=true;"Program Location\nexit" [shape=box, fontsize=80]; }
+
+// Page number 84
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+nullary [shape=plaintext, label=<
+<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="1">nullary</TD></TR>
+<TR><TD>c</TD></TR>
+<TR><TD>last_color</TD></TR>
+</TABLE>>];ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"p"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\ncolor\nlast_elem\nold_color\nr[n,p]\nr[n,x]"];
+"1"->"1" [label="t[n]"];
+}
+
+// Page number 85
+digraph msg {size = "7.5,10";center=true;"Program Location\nL8" [shape=box, fontsize=80]; }
+
+// Page number 86
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"p"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\nlast_elem\nr[n,p]\nr[n,x]"];
+"1"->"1" [label="t[n]"];
+}
+
+// Page number 87
+digraph msg {size = "7.5,10";center=true;"Program Location\nL9" [shape=box, fontsize=80]; }
+
+// Page number 88
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"1";
+"p"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\nlast_elem\nr[n,e]\nr[n,p]\nr[n,x]"];
+"1"->"1" [label="t[n]"];
+}
+
+// Page number 89
+digraph msg {size = "7.5,10";center=true;"Program Location\nL10" [shape=box, fontsize=80]; }
+
+// Page number 90
+digraph structure {
+size="7.5,10";center=true;fonstsize=6;
+ranksep=0.2;nodesep=0.2;edge [fontsize=10];node [fontsize=10];
+"e" [shape=plaintext, style=bold, fontsize=16];
+"p" [shape=plaintext, style=bold, fontsize=16];
+"x" [shape=plaintext, style=bold, fontsize=16];
+"e"->"1";
+"p"->"1";
+"x"->"1";
+"1" [label="1\naltlist[n]\nlast_elem\nr[n,e]\nr[n,p]\nr[n,x]"];
+"1"->"1" [label="t[n]"];
+}
+
+// Page number 91
+digraph msg {size = "7.5,10";center=true;"Program Location\nL11" [shape=box, fontsize=80]; }
+
+// Page number 92
 digraph msg {size = "7.5,10";center=true;"Program Location\nerror" [shape=box, fontsize=80]; }
 
