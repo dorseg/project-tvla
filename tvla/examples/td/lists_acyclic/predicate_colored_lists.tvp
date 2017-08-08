@@ -48,9 +48,8 @@ foreach (z in PVar) {
 // snapshot of the initial color of each element
 %p old_color(v)
 
+// snapshot of the initial next values
 %p old_n(v_1,v_2)
-
-%i same_order[n,old_n](v) = A(w) (n(v,w) <-> old_n(v,w))
 
 /////////////////////////////////////////////
 // Instrumentation (i.e., derived) predicates
@@ -61,6 +60,9 @@ foreach (z in PVar) {
 // a predicate for capturing the original color of the last elements.
 //%i last_color() = A(v) (last_elem(v) -> old_color(v))
 %i last_color() = E(v) last_elem(v) & old_color(v)
+
+// a predicate for insuring that the list preserves the same order.
+%i same_order[n,old_n](v) = A(w) (n(v,w) <-> old_n(v,w))
 
 // a predicate for ensuring that the colors in the list alternate.
 %i altlist[n](v) = A(w) (n(v, w) -> (color(v) <-> !color(w)))
