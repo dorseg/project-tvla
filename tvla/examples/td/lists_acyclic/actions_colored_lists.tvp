@@ -216,13 +216,13 @@
 
 ////////////// Actions for testing various properties
 
-// assert that the order of the list is the same as the original order (has the same reachability)
-%action Assert_Same_Order(lhs) {
+// assert that the reachability of the list is the same as the original order
+%action Assert_Same_Reachability(lhs) {
   %t "Assert_Same_Order(" + lhs + ")"
   %f { lhs(v) }
   %p !A(v) (r[n,lhs](v) <-> old_r[n,lhs](v))
   %message (!A(v) (r[n,lhs](v) <-> old_r[n,lhs](v))) -> 
-           "The order of the list point by " + lhs + " should be the same as the input list"
+           "The reachability of the list point by " + lhs + " should be the same as the input list"
 }
 
 // assert that the colors in the list alternate.

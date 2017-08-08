@@ -41,6 +41,6 @@ L11 Get_Next_L(e,e)    L9    //   e = e->n;
 
 exit Assert_ListInvariants(x)     error
 exit Assert_No_Leak(x)            error
-exit Assert_Same_Order(x)         error
+exit Assert_Same_Reachability(x)  error
 exit Assert_Alternating_Colors(x) error
 exit Assert_Flipped(x)		  	  error
