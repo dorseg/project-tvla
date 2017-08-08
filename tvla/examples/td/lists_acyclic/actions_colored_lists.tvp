@@ -185,13 +185,6 @@
   }
 }
 
-%action Set_Old_n() {
-  %t "Set_Old_n()"
-  {
-    old_n(v) = E(w) n(v,w)
-  }
-}
-
 // flipping the color of the element pointed by lhs. for all other elements, the action preserves its current color.
 %action Flip_Color_L(lhs) {
   %t lhs + "->" + color + " = " + "!" + lhs + "->" + color
@@ -208,8 +201,8 @@
 // assert that the order of the list is the same as the original order
 %action Assert_Same_Order(lhs) {
   %t "Assert_Same_Order(" + lhs + ")"
-  %p !A(v_1,v_2) (n(v_1,v_2) <-> old_n(v_1,v_2))
-  %message (!A(v_1,v_2) (n(v_1,v_2) <-> old_n(v_1,v_2))) -> 
+  %p !A(v) same_order[n,old_n](v)
+  %message (!A(v) same_order[n,old_n](v)) -> 
            "The order of the list point by " + lhs + " should be the same as the input list"
 }
 

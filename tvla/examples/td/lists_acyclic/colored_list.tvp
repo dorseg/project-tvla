@@ -17,8 +17,7 @@
 
 // finding the color (variable c) of the last element of in the list.
 // p represents the last node in the list.
-L0_0 Set_Old_Colors()  L0_1 // capturing the original colors
-L0_1 Set_Old_n()	   L1   // capturing the original reachability
+L0_0 Set_Old_Colors()  L1 // capturing the original colors
 L1 Copy_Var_L(e,x)     L2   // e = x;  
 L2 Set_False_L(c)      L3   // c = false;
 L3 Is_Null_Var(e)      L6   // while (e != NULL) {

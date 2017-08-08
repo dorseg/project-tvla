@@ -9,6 +9,8 @@
        color = {head:1/2, tail:1/2}
        altlist[n] = {head, tail}
        last_elem = {tail:1/2}
+       old_n = {head->tail:1/2, tail->tail:1/2}
+       same_order[n,old_n] = {head, tail}
 }
 
 // An acyclic singly-linked list with a single element pointed by x.
@@ -20,4 +22,5 @@
        color = {head:1/2}
        altlist[n] = {head}
        last_elem = {head}
+       same_order[n,old_n] = {head}
 }
